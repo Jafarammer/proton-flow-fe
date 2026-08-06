@@ -1,65 +1,80 @@
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0;
-  background-color: white;
-  .header-content {
+.app-layout {
+  height: 100vh;
+  .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0px 32px 0px 32px;
-    width: 100%;
-  }
-}
-
-.sidebar {
-  .sidebar-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 64px;
-
-    .logo {
-      background-color: #ffc349;
+    padding: 0;
+    background-color: white;
+    border-bottom: 1px solid #c6cfdc;
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0px 32px 0px 32px;
+      width: 100%;
     }
+  }
 
-    .logo-label {
-      overflow: hidden;
-      transition: all 0.35s ease;
+  .sidebar {
+    border-right: 1px solid #c6cfdc;
+    .sidebar-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 64px;
 
-      .title-logo {
-        margin: 0;
-        color: #4f46e5;
-        white-space: nowrap;
+      .logo {
+        background-color: #ffc349;
+      }
+
+      .logo-label {
         overflow: hidden;
-      }
+        transition: all 0.35s ease;
 
-      .desc-logo {
-        display: block;
-        white-space: nowrap;
-        font-size: 12px;
-      }
+        .title-logo {
+          margin: 0;
+          color: #4f46e5;
+          white-space: nowrap;
+          overflow: hidden;
+        }
 
-      &.collapsed {
-        width: 0;
-        opacity: 0;
-        margin-left: 0;
-      }
+        .desc-logo {
+          display: block;
+          white-space: nowrap;
+          font-size: 12px;
+        }
 
-      &:not(.collapsed) {
-        width: 180px;
-        opacity: 1;
-        margin-left: 12px;
+        &.collapsed {
+          width: 0;
+          opacity: 0;
+          margin-left: 0;
+        }
+
+        &:not(.collapsed) {
+          width: 180px;
+          opacity: 1;
+          margin-left: 12px;
+        }
+      }
+    }
+
+    .btn-container {
+      padding: 28px 12px 28px 12px;
+      .btn {
+        padding: 20px 0px 20px 0px;
       }
     }
   }
 
-  .btn-container {
-    padding: 28px 12px 28px 12px;
-    .btn {
-      padding: 20px 0px 20px 0px;
-    }
+  .content {
+    margin: 24px 16px;
+    padding: 24px;
+    height: calc(100vh - 108px);
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid #c6cfdc;
+    overflow-y: auto;
   }
 }

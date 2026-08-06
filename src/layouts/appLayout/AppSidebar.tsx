@@ -41,7 +41,7 @@ const AppSidebar = ({ collapse }: SidebarProps) => {
           className="btn"
           type="primary"
           block
-          icon={<FaPlusCircle size={collapse ? 16 : 20} />}
+          icon={<FaPlusCircle size={16} />}
         >
           {!collapse && "New Workflow"}
         </Button>
@@ -61,7 +61,7 @@ const AppSidebar = ({ collapse }: SidebarProps) => {
           {
             key: "/workflows",
             icon: <GoWorkflow size={24} />,
-            label: "WorkFlows",
+            label: "Workflows",
           },
           {
             key: "/templates",

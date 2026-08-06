@@ -19,6 +19,6 @@ export const appTheme: ThemeConfig = {
 
     borderRadius: 10,
 
-    fontFamily: "Inter, sans-serif",
+    fontFamily: "Ubuntu, sans-serif",
   },
 };
