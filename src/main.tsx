@@ -1,10 +1,14 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.tsx'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import { ConfigProvider } from "antd";
+import App from "./App.tsx";
+import { appTheme } from "./utils/Theme.ts";
+import "./styles/globals.scss";
 
-createRoot(document.getElementById('root')!).render(
+createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <App />
+    <ConfigProvider theme={appTheme}>
+      <App />
+    </ConfigProvider>
   </StrictMode>,
-)
+);
