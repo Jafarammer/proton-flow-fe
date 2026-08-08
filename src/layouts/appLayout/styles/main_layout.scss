@@ -1,0 +1,12 @@
+.main-layout {
+  height: 100vh;
+  .content {
+    margin: 24px 16px;
+    padding: 16px;
+    height: calc(100vh - 108px);
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid #c6cfdc;
+    overflow-y: auto;
+  }
+}

@@ -5,6 +5,7 @@ import {
   IoIosArrowDroprightCircle,
   IoMdSearch,
 } from "react-icons/io";
+import "./styles/app_header.scss";
 
 const { Header } = Layout;
 

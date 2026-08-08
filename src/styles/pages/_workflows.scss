@@ -1,0 +1,26 @@
+.workflows-page {
+  .workflows-filters {
+    width: 100%;
+    margin: 32px 0px;
+    padding: 16px 20px;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+
+    .filters-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #44465a;
+    }
+
+    .filter-divider {
+      height: 32px;
+      margin-inline: 0;
+      border-color: #c8cada;
+    }
+  }
+}

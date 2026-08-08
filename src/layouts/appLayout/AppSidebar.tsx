@@ -4,6 +4,7 @@ import { MdOutlineDashboard, MdElectricBolt } from "react-icons/md";
 import { GoWorkflow, GoProjectTemplate } from "react-icons/go";
 import { IoExtensionPuzzleOutline } from "react-icons/io5";
 import { FaPlusCircle } from "react-icons/fa";
+import "./styles/app_sidebar.scss";
 
 const { Sider } = Layout;
 const { Title, Text } = Typography;
