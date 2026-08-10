@@ -2,7 +2,7 @@
 import { useState } from "react";
 // type props
 import type { MenuProps } from "antd";
-import type { DropdownOption } from "../../../types/dropdown";
+import type { DropdownOption } from "../types/components";
 // constants
 import {
   workflowStatusOptions,

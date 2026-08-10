@@ -4,16 +4,15 @@ import { Button, Divider, Dropdown, Space, Input } from "antd";
 import { IoFilter } from "react-icons/io5";
 import { FaSortDown } from "react-icons/fa";
 import { IoMdSearch } from "react-icons/io";
-// type props
+// type
 import type { MenuProps } from "antd";
-import type { DropdownOption } from "../../../types/dropdown";
-// utils | helpers
-import { toMenuItems } from "../../../utils/dropdown";
+import type { DropdownOption } from "../types/components";
 // constants
 import {
   workflowStatusOptions,
   workflowTriggerOptions,
   workflowSortOptions,
+  toMenuItems,
 } from "../constants";
 // styles scss
 import "./styles/work_flows_filter.scss";
@@ -91,7 +90,7 @@ const WorkFlowsFilter = ({
         <div className="workflows-filters-right">
           <Input
             className="input-search"
-            placeholder="Search..."
+            placeholder="Filter by name"
             prefix={<IoMdSearch color="#64748B" size={20} />}
           />
         </div>

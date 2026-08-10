@@ -1,4 +1,6 @@
-import type { DropdownOption } from "../../types/dropdown";
+import type { MenuProps } from "antd";
+import type { DropdownOption } from "./types/components";
+import type { IWorkflowData } from "./types/components";
 
 export const workflowStatusOptions: DropdownOption[] = [
   {
@@ -60,3 +62,17 @@ export const workflowSortOptions: DropdownOption[] = [
     label: "Created At",
   },
 ];
+
+export const toMenuItems = (options: DropdownOption[]): MenuProps["items"] => {
+  return options.map((item) => ({
+    key: item.value,
+    label: item.label,
+  }));
+};
+
+export const statusColorTable: Record<IWorkflowData["status"], string> = {
+  active: "green",
+  error: "red",
+  paused: "orange",
+  draft: "default",
+};

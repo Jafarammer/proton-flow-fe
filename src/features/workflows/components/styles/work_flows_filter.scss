@@ -1,6 +1,6 @@
 .workflows-filters {
-  width: max-content;
-  min-width: 100%;
+  width: 100%;
+  min-width: calc(1199px - 240px);
   margin: 32px 0;
   padding: 16px 20px;
   background: #fff;
@@ -14,7 +14,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 16px;
+    gap: 12px;
   }
 
   .workflows-filters-left {

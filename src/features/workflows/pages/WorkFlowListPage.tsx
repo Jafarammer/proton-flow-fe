@@ -2,6 +2,7 @@
 import PageLayout from "../../../layouts/appLayout/PageLayout";
 // components
 import WorkFlowsFilter from "../components/WorkFlowsFilter";
+import WorkFlowsTable from "../components/WorkFlowsTable";
 // hooks
 import useWorkflows from "../hooks/useWorkFlows";
 // styles
@@ -24,6 +25,8 @@ const WorkFlowListPage = () => {
         sortFilter={workflows.sortFilter}
         onChangeSortFilter={workflows.onChangeSortFilter}
       />
+
+      <WorkFlowsTable />
     </PageLayout>
   );
 };
