@@ -33,18 +33,18 @@
       padding: 20px 32px;
       font-size: 16px;
       color: #44465a !important;
-      border-bottom: 1px solid #d9dce8 !important;
+      border-bottom: 1px solid #cbd5e1 !important;
     }
     &:hover {
       > td {
-        background: #fafbff !important;
+        background: #f8f9ff !important;
       }
     }
   }
 
   > tr:last-child {
     > td {
-      border-bottom: 1px solid #d9dce8 !important;
+      border-bottom: 1px solid #cbd5e1 !important;
     }
   }
 }

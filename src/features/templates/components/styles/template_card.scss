@@ -1,0 +1,80 @@
+.template-card {
+  margin: 32px 0;
+  height: 400px;
+  border: 1px solid #cbd5e1;
+
+  .template-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .template-card-icon {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f8f9ff;
+    border-radius: 10px;
+    color: #4f46e5;
+    transition: all 0.2s ease;
+
+    &:hover {
+      border-color: #4f46e5;
+      background: #eef2ff;
+    }
+  }
+
+  .template-category {
+    margin: 0;
+    color: #4f46e5;
+    background: #f8f9ff;
+    border-radius: 5px;
+    font-weight: 500;
+  }
+
+  .template-card-content {
+    flex: 1;
+    margin-top: 24px;
+  }
+
+  .template-title {
+    margin-bottom: 12px !important;
+    height: 84px;
+  }
+
+  .template-description {
+    margin: 0 !important;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .template-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    .btn {
+      padding: 12px 0px;
+    }
+  }
+
+  &:hover {
+    background: #f8f9ff;
+  }
+}
+
+// medias
+
+@media (max-width: 1199px) {
+  .template-card {
+    height: 440px;
+    .template-card-footer {
+      flex-direction: column;
+      gap: 12px;
+    }
+  }
+}
