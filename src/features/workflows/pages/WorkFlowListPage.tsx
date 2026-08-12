@@ -26,7 +26,10 @@ const WorkFlowListPage = () => {
         onChangeSortFilter={workflows.onChangeSortFilter}
       />
 
-      <WorkFlowsTable />
+      <WorkFlowsTable
+        onEditWorkflow={(item) => workflows.onEditWorkflow(item.id)}
+        onDeleteWorkflow={(item) => workflows.onDeleteWorkflow(item.id)}
+      />
     </PageLayout>
   );
 };

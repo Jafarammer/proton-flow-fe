@@ -10,6 +10,11 @@ import { MdMoreVert } from "react-icons/md";
 // constants
 import { statusColorTable } from "../constants";
 
+interface WorkFlowColumnProps {
+  onEditWorkflow: (workflow: IWorkflowData) => void;
+  onDeleteWorkflow: (workflow: IWorkflowData) => void;
+}
+
 const getWorkflowTableIcon = (index: number) => {
   switch (index) {
     case 0:
@@ -23,7 +28,10 @@ const getWorkflowTableIcon = (index: number) => {
   }
 };
 
-export const columnWorkflowsTable: TableColumnsType<IWorkflowData> = [
+export const getWorkflowColumns = ({
+  onEditWorkflow,
+  onDeleteWorkflow,
+}: WorkFlowColumnProps): TableColumnsType<IWorkflowData> => [
   {
     title: "NAME",
     key: "name",
@@ -86,10 +94,10 @@ export const columnWorkflowsTable: TableColumnsType<IWorkflowData> = [
 
       const onActions: MenuProps["onClick"] = ({ key }) => {
         if (key === "edit") {
-          alert(`Edit ${record.id}`);
+          onEditWorkflow(record);
         }
         if (key === "delete") {
-          alert(`Delete ${record.id}`);
+          onDeleteWorkflow(record);
         }
       };
 

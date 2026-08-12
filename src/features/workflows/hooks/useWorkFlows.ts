@@ -44,6 +44,14 @@ const useWorkflows = () => {
     setSortFilter(selected);
   };
 
+  const onEditWorkflow = (workflowId: string) => {
+    alert(`Edit ${workflowId}`);
+  };
+
+  const onDeleteWorkflow = (workflowId: string) => {
+    alert(`Delete ${workflowId}`);
+  };
+
   return {
     status,
     onChangeStatus,
@@ -51,6 +59,8 @@ const useWorkflows = () => {
     onChangeTrigger,
     sortFilter,
     onChangeSortFilter,
+    onEditWorkflow,
+    onDeleteWorkflow,
   };
 };
 

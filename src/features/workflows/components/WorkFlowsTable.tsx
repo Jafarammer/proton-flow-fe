@@ -3,18 +3,28 @@ import { Table } from "antd";
 // type
 import type { IWorkflowData } from "../types/components";
 // config table
-import { columnWorkflowsTable } from "../table/Columns";
+import { getWorkflowColumns } from "../table/Columns";
 // static data
 import { dataTableWorkflows } from "../table/dataTable";
 // styles scss
 import "./styles/work_flows_table.scss";
 
-const WorkFlowsTable = () => {
+interface WorkflowTableProps {
+  onEditWorkflow: (workFlow: IWorkflowData) => void;
+  onDeleteWorkflow: (workFlow: IWorkflowData) => void;
+}
+
+const WorkFlowsTable = ({
+  onEditWorkflow,
+  onDeleteWorkflow,
+}: WorkflowTableProps) => {
+  // config
+  const columns = getWorkflowColumns({ onEditWorkflow, onDeleteWorkflow });
   return (
     <div className="work-flows-table">
       <Table<IWorkflowData>
         rowKey="id"
-        columns={columnWorkflowsTable}
+        columns={columns}
         dataSource={dataTableWorkflows}
         pagination={{
           pageSize: 5,
