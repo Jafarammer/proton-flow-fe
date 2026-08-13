@@ -70,7 +70,7 @@ const AppSidebar = ({ collapse }: SidebarProps) => {
             label: "Templates",
           },
           {
-            key: "/integration",
+            key: "/integrations",
             icon: <IoExtensionPuzzleOutline size={24} />,
             label: "Integration",
           },

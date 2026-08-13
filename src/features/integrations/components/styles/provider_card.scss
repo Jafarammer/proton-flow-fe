@@ -1,0 +1,225 @@
+.provider-card {
+  margin: 32px 0;
+  height: 440px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+
+  .provider-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+
+    .provider-info {
+      display: flex;
+      align-items: start;
+      gap: 8px;
+      height: 76px;
+    }
+
+    .provider-icon {
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f8f9ff;
+      border-radius: 10px;
+      color: #4f46e5;
+    }
+
+    .provider-title-wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .provider-title {
+      margin: 0 !important;
+      font-size: 16px !important;
+    }
+
+    .provider-type {
+      margin-top: 4px;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .provider-status {
+      margin: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 6px;
+      border-radius: 999px;
+      font-size: 8px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .provider-status-dot {
+      width: 4px;
+      height: 4px;
+      display: inline-block;
+      border-radius: 50%;
+      background: currentColor;
+    }
+
+    .provider-status-connected {
+      color: #15803d;
+      background: #dcfce7;
+      border-color: #bbf7d0;
+    }
+
+    .provider-status-disconnected {
+      color: #64748b;
+      background: #f1f5f9;
+      border-color: #e2e8f0;
+    }
+  }
+
+  .provider-card-content {
+    flex: 1;
+    margin-top: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    .provider-description {
+      margin: 0 !important;
+      min-height: 52px;
+      font-size: 12px;
+      line-height: 1.65;
+    }
+
+    .provider-models {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      .provider-models-text {
+        font-size: 10px;
+      }
+    }
+
+    .provider-api-key {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .provider-label {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .provider-key {
+      padding: 8px 10px;
+      background: #f8fafc;
+      font-size: 10px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .provider-key-text {
+      flex: 1;
+      min-width: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .provider-key-text-empty {
+      flex: 1;
+      min-width: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      padding: 4px 0px;
+    }
+  }
+
+  .provider-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  &:hover {
+    background: #f8f9ff;
+    transform: translateY(-2px);
+  }
+}
+
+// medias
+@media (max-width: 991px) {
+  .provider-card {
+    .provider-card-header {
+      flex-direction: column;
+      gap: 12px;
+
+      .provider-info {
+        height: 52px;
+      }
+    }
+
+    .provider-card-footer {
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    height: 520px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .provider-card-header {
+    .provider-icon {
+      height: 52px !important;
+      width: 52px !important;
+    }
+
+    .provider-title {
+      font-size: 20px !important;
+    }
+
+    .provider-type {
+      font-size: 12px !important;
+    }
+
+    .provider-status {
+      gap: 8px !important;
+      padding: 4px 8px !important;
+      font-size: 12px !important;
+    }
+
+    .provider-status-dot {
+      width: 7px !important;
+      height: 7px !important;
+    }
+  }
+
+  .provider-card-content {
+    .provider-description {
+      font-size: 14px !important;
+    }
+
+    .provider-models {
+      font-size: 12px !important;
+    }
+
+    .provider-key {
+      font-size: 12px !important;
+    }
+  }
+}

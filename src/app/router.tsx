@@ -4,6 +4,7 @@ import MainLayout from "../layouts/appLayout/MainLayout";
 import WorkFlowListPage from "../features/workflows/pages/WorkFlowListPage";
 import Overview from "../features/dashboard/pages/Overview";
 import TemplateListPage from "../features/templates/pages/TemplateListPage";
+import IntegrationListPage from "../features/integrations/pages/IntegrationListPage";
 // pages
 import NotFoundPage from "../pages/NotFoundPage";
 
@@ -26,6 +27,10 @@ export const router = createBrowserRouter([
       {
         path: "/templates",
         element: <TemplateListPage />,
+      },
+      {
+        path: "/integrations",
+        element: <IntegrationListPage />,
       },
     ],
   },
