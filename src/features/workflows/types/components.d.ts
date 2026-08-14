@@ -12,3 +12,10 @@ export interface IWorkflowData {
   trigger: string;
   lastRun: string;
 }
+
+export interface ICreateWorkflowForm {
+  name: string;
+  description: string;
+  trigger: "manual" | "webhook" | "schedule";
+  startingPoint: "blank" | "template";
+}

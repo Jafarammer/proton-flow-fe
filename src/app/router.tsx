@@ -1,11 +1,15 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import MainLayout from "../layouts/appLayout/MainLayout";
-// features
-import WorkFlowListPage from "../features/workflows/pages/WorkFlowListPage";
+// Dashboard
 import Overview from "../features/dashboard/pages/Overview";
+// Workflows
+import WorkFlowListPage from "../features/workflows/pages/WorkFlowListPage";
+import CreateWorkflowPage from "../features/workflows/pages/CreateWorkflowPage";
+// Templates
 import TemplateListPage from "../features/templates/pages/TemplateListPage";
+// Integrations
 import IntegrationListPage from "../features/integrations/pages/IntegrationListPage";
-// pages
+// Pages
 import NotFoundPage from "../pages/NotFoundPage";
 
 export const router = createBrowserRouter([
@@ -17,19 +21,31 @@ export const router = createBrowserRouter([
     element: <MainLayout />,
     children: [
       {
-        path: "/dashboard",
+        path: "dashboard",
         element: <Overview />,
       },
+
       {
-        path: "/workflows",
-        element: <WorkFlowListPage />,
+        path: "workflows",
+        children: [
+          {
+            index: true,
+            element: <WorkFlowListPage />,
+          },
+          {
+            path: "create",
+            element: <CreateWorkflowPage />,
+          },
+        ],
       },
+
       {
-        path: "/templates",
+        path: "templates",
         element: <TemplateListPage />,
       },
+
       {
-        path: "/integrations",
+        path: "integrations",
         element: <IntegrationListPage />,
       },
     ],

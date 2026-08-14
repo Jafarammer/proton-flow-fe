@@ -39,10 +39,10 @@ const AppSidebar = ({ collapse }: SidebarProps) => {
       </div>
       <div className="btn-container">
         <Button
-          className="btn"
           type="primary"
           block
           icon={<FaPlusCircle size={16} />}
+          onClick={() => navigate("/workflows/create")}
         >
           {!collapse && "New Workflow"}
         </Button>
