@@ -1,6 +1,10 @@
 import type { MenuProps } from "antd";
-import type { DropdownOption } from "./types/components";
-import type { IWorkflowData } from "./types/components";
+import { LuFilePlus2, LuLayers3 } from "react-icons/lu";
+import type {
+  DropdownOption,
+  IWorkflowData,
+  IStartingPointList,
+} from "./types/components";
 
 export const workflowStatusOptions: DropdownOption[] = [
   {
@@ -76,3 +80,21 @@ export const statusColorTable: Record<IWorkflowData["status"], string> = {
   paused: "orange",
   draft: "default",
 };
+
+export const startingPointList: IStartingPointList[] = [
+  {
+    id: "blank",
+    value: "blank",
+    title: "Start from Scratch",
+    description: "Open a blank canvas and build your workflow node by node.",
+    icon: LuFilePlus2,
+  },
+  {
+    id: "template",
+    value: "template",
+    title: "Start from Template",
+    description:
+      "Use a ready-made workflow template and customize it for your needs.",
+    icon: LuLayers3,
+  },
+];

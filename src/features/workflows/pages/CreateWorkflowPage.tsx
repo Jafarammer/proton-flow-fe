@@ -5,6 +5,7 @@ import useCreateWorkflow from "../hooks/useCreateWorkflow";
 // components
 import WorkflowBasicForm from "../components/WorkflowBasicForm";
 import WorkflowTrigger from "../components/WorkflowTrigger";
+import WorkflowStartingPoint from "../components/WorkflowStartingPoint";
 // styles scss
 import "./styles/create_workflow_page.scss";
 
@@ -19,6 +20,7 @@ const CreateWorkflowPage = () => {
     >
       <WorkflowBasicForm formik={createWorkflow.formik} />
       <WorkflowTrigger formik={createWorkflow.formik} />
+      <WorkflowStartingPoint formik={createWorkflow.formik} />
     </PageLayout>
   );
 };

@@ -1,0 +1,97 @@
+.workflow-starting-point {
+  width: 100%;
+
+  .starting-point-header {
+    margin-bottom: 16px;
+
+    .title {
+      font-size: 14px;
+      line-height: 4px;
+    }
+    .description {
+      font-size: 12px;
+    }
+  }
+
+  .starting-point-options {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+
+    .starting-point-card {
+      min-height: 220px;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      cursor: pointer;
+
+      transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+
+      &:hover {
+        border-color: #4f46e5;
+        background: #fafbff;
+        transform: translateY(-2px);
+      }
+
+      &.selected {
+        border: 2px solid #4f46e5;
+
+        .starting-point-icon {
+          color: #ffffff;
+          background: #4f46e5;
+        }
+      }
+    }
+
+    .starting-point-content {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+
+      .starting-point-icon {
+        width: 52px;
+        height: 52px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #4f46e5;
+        background: #fafbff;
+        border-radius: 50%;
+        transition: all 0.2s ease;
+      }
+
+      .title-content {
+        margin-top: 18px;
+        margin-bottom: 8px;
+        font-size: 18px;
+        font-weight: 700;
+      }
+
+      .description-content {
+        max-width: 320px;
+        font-size: 14px;
+        line-height: 1.6;
+        height: 96px;
+      }
+    }
+  }
+
+  .starting-point-error {
+    margin-top: 4px;
+    color: #ff4d4f;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 767px) {
+  .workflow-starting-point {
+    .starting-point-options {
+      grid-template-columns: 1fr;
+    }
+  }
+}

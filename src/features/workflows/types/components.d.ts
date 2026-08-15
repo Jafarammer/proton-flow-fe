@@ -1,3 +1,5 @@
+import type { IconType } from "react-icons";
+
 export type WorkFlowStatus = "active" | "error" | "paused" | "draft";
 
 export interface DropdownOption {
@@ -18,4 +20,12 @@ export interface ICreateWorkflowForm {
   description: string;
   trigger: "manual" | "webhook" | "schedule";
   startingPoint: "blank" | "template";
+}
+
+export interface IStartingPointList {
+  id: string;
+  value: string;
+  title: string;
+  description: string;
+  icon: IconType;
 }
