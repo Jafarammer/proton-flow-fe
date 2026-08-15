@@ -20,6 +20,9 @@ const useCreateWorkflow = () => {
     },
   });
   // function
+  const onSubmit = (): void => {
+    formik.submitForm();
+  };
   const onCancel = (): void => {
     navigate("/workflows");
   };
@@ -27,6 +30,7 @@ const useCreateWorkflow = () => {
   return {
     formik,
     onCancel,
+    onSubmit,
   };
 };
 

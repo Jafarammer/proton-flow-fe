@@ -1,0 +1,22 @@
+.create-workflow-footer {
+  display: flex;
+  gap: 8px;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+
+  .btn {
+    width: 200px;
+  }
+}
+
+@media (max-width: 767px) {
+  .create-workflow-footer {
+    flex-direction: column;
+    justify-content: center;
+
+    .btn {
+      width: 100%;
+    }
+  }
+}

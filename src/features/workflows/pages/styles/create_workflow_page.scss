@@ -1,4 +1,9 @@
 .create-workflow-page {
   padding: 0px 20px;
   min-width: 256px;
+
+  .divider {
+    margin: 32px 0;
+    border-top: 2px solid #cbd5e1;
+  }
 }
