@@ -20,7 +20,7 @@ const IntegrationListPage = () => {
       desc="Connect external services to supercharge your AI workflows. Manage API keys securely across your environment."
       className="integration-list-page"
     >
-      <Row gutter={[24, 24]} wrap className="row">
+      <Row gutter={[24, 24]} wrap>
         {providersData.map((provider) => (
           <Col key={provider.id} xs={24} sm={12} lg={8}>
             <ProviderCard

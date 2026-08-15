@@ -56,6 +56,7 @@ const ProviderCard = ({
           className="provider-description"
           ellipsis={{
             rows: 3,
+            tooltip: true,
           }}
         >
           {data.description}

@@ -20,7 +20,7 @@ const TemplateListPage = () => {
       desc="Jumpstart your AI workflows with pre-configured templates designed for high-performance automation."
       className="template-list-page"
     >
-      <Row gutter={[24, 24]} wrap className="row">
+      <Row gutter={[24, 24]} wrap>
         {templatesCardData.map((item) => (
           <Col key={item.id} xs={24} sm={12} lg={8} xxl={6}>
             <TemplateCard

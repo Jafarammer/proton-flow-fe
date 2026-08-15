@@ -52,7 +52,11 @@ const WorkflowTrigger = ({ formik }: WorkflowTriggerProps) => {
                 </div>
                 <div className="trigger-option-content">
                   <Title level={5}>Webhook</Title>
-                  <Paragraph>
+                  <Paragraph
+                    type="secondary"
+                    ellipsis={{ rows: 3, tooltip: true }}
+                    className="trigger-option-description"
+                  >
                     Run the workflow when an external webhook request is
                     received.
                   </Paragraph>
@@ -67,7 +71,11 @@ const WorkflowTrigger = ({ formik }: WorkflowTriggerProps) => {
                 </div>
                 <div className="trigger-option-content">
                   <Title level={5}>Schedule</Title>
-                  <Paragraph>
+                  <Paragraph
+                    type="secondary"
+                    ellipsis={{ rows: 3, tooltip: true }}
+                    className="trigger-option-description"
+                  >
                     Run the workflow automatically on a scheduled interval.
                   </Paragraph>
                 </div>
@@ -81,7 +89,11 @@ const WorkflowTrigger = ({ formik }: WorkflowTriggerProps) => {
                 </div>
                 <div className="trigger-option-content">
                   <Title level={5}>Manual</Title>
-                  <Paragraph>
+                  <Paragraph
+                    type="secondary"
+                    ellipsis={{ rows: 3, tooltip: true }}
+                    className="trigger-option-description"
+                  >
                     Run the workflow manually from the workflow builder.
                   </Paragraph>
                 </div>
