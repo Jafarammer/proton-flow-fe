@@ -1,10 +1,12 @@
 import type { Dispatch, SetStateAction } from "react";
-import { Layout, Avatar, Button, Input } from "antd";
+import { Layout, Button, Input } from "antd";
 import {
   IoIosArrowDropleftCircle,
   IoIosArrowDroprightCircle,
   IoMdSearch,
 } from "react-icons/io";
+// components
+import HeaderProfile from "./components/HeaderProfile";
 import "./styles/app_header.scss";
 
 const { Header } = Layout;
@@ -34,7 +36,7 @@ const AppHeader = ({ collapse, setCollapse }: HeaderProps) => {
           prefix={<IoMdSearch color="#64748B" size={20} />}
           placeholder="Search..."
         />
-        <Avatar>W</Avatar>
+        <HeaderProfile />
       </div>
     </Header>
   );
