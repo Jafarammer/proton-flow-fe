@@ -29,3 +29,11 @@ export interface IStartingPointList {
   description: string;
   icon: IconType;
 }
+
+export interface ITriggerList {
+  id: string;
+  value: string;
+  title: string;
+  description: string;
+  icon: IconType;
+}

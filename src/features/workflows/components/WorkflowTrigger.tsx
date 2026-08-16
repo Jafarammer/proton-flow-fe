@@ -1,8 +1,7 @@
 // UI Library
-import { Form, Radio, Typography } from "antd";
-// icon
-import { MdOutlineWebhook, MdSchedule } from "react-icons/md";
-import { PiHandTapBold } from "react-icons/pi";
+import { Typography, Card } from "antd";
+// constants
+import { triggerList } from "../constants";
 // types
 import type { FormikProps } from "formik";
 import type { ICreateWorkflowForm } from "../types/components";
@@ -18,90 +17,51 @@ interface WorkflowTriggerProps {
 const WorkflowTrigger = ({ formik }: WorkflowTriggerProps) => {
   return (
     <div className="workflow-trigger">
-      <Form layout="vertical">
-        <Form.Item
-          label={
-            <div className="form-label-container">
-              <Text className="label-title">Initial Trigger</Text>
-              <Paragraph type="secondary" className="label-description">
-                How should this workflow start executing?
-              </Paragraph>
-            </div>
-          }
-          required={false}
-          validateStatus={
-            formik.touched.trigger && formik.errors.trigger ? "error" : ""
-          }
-          help={formik.touched.trigger ? formik.errors.trigger : undefined}
-        >
-          <Radio.Group
-            name="trigger"
-            value={formik.values.trigger}
-            onChange={(event) => {
-              formik.setFieldValue("trigger", event.target.value);
-            }}
-            onBlur={() => {
-              formik.setFieldTouched("trigger", true);
-            }}
-            className="trigger-options"
-          >
-            <Radio value={"webhook"} className="trigger-option">
-              <div className="trigger-option-layout">
-                <div className="trigger-icon">
-                  <MdOutlineWebhook />
-                </div>
-                <div className="trigger-option-content">
-                  <Title level={5}>Webhook</Title>
-                  <Paragraph
-                    type="secondary"
-                    ellipsis={{ rows: 3, tooltip: true }}
-                    className="trigger-option-description"
-                  >
-                    Run the workflow when an external webhook request is
-                    received.
-                  </Paragraph>
-                </div>
-              </div>
-            </Radio>
+      <div className="trigger-header">
+        <Title level={4} className="title-header">
+          Initial Trigger
+        </Title>
+        <Text type="secondary" className="description-header">
+          How should this workflow start executing?
+        </Text>
+      </div>
 
-            <Radio value={"schedule"} className="trigger-option">
-              <div className="trigger-option-layout">
-                <div className="trigger-icon">
-                  <MdSchedule />
-                </div>
-                <div className="trigger-option-content">
-                  <Title level={5}>Schedule</Title>
-                  <Paragraph
-                    type="secondary"
-                    ellipsis={{ rows: 3, tooltip: true }}
-                    className="trigger-option-description"
-                  >
-                    Run the workflow automatically on a scheduled interval.
-                  </Paragraph>
-                </div>
-              </div>
-            </Radio>
+      <div className="trigger-options">
+        {triggerList.map((item) => {
+          const Icon = item.icon;
+          const isSelected = formik.values.trigger === item.value;
 
-            <Radio value={"manual"} className="trigger-option">
+          return (
+            <Card
+              key={item.id}
+              className={`trigger-card ${isSelected ? "selected" : ""}`}
+              onClick={() => {
+                formik.setFieldValue("trigger", item.value);
+                formik.setFieldTouched("trigger", true);
+              }}
+            >
               <div className="trigger-option-layout">
                 <div className="trigger-icon">
-                  <PiHandTapBold />
+                  <Icon />
                 </div>
                 <div className="trigger-option-content">
-                  <Title level={5}>Manual</Title>
+                  <Title level={5}>{item.title}</Title>
                   <Paragraph
                     type="secondary"
                     ellipsis={{ rows: 3, tooltip: true }}
                     className="trigger-option-description"
                   >
-                    Run the workflow manually from the workflow builder.
+                    {item.description}
                   </Paragraph>
                 </div>
               </div>
-            </Radio>
-          </Radio.Group>
-        </Form.Item>
-      </Form>
+            </Card>
+          );
+        })}
+      </div>
+      {formik.touched.trigger && formik.errors.trigger && (
+        <div className="trigger-error">{formik.errors.trigger}</div>
+      )}
     </div>
   );
 };

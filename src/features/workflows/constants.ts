@@ -1,9 +1,12 @@
 import type { MenuProps } from "antd";
 import { LuFilePlus2, LuLayers3 } from "react-icons/lu";
+import { MdOutlineWebhook, MdSchedule } from "react-icons/md";
+import { PiHandTapBold } from "react-icons/pi";
 import type {
   DropdownOption,
   IWorkflowData,
   IStartingPointList,
+  ITriggerList,
 } from "./types/components";
 
 export const workflowStatusOptions: DropdownOption[] = [
@@ -96,5 +99,30 @@ export const startingPointList: IStartingPointList[] = [
     description:
       "Use a ready-made workflow template and customize it for your needs.",
     icon: LuLayers3,
+  },
+];
+
+export const triggerList: ITriggerList[] = [
+  {
+    id: "webhook",
+    value: "webhook",
+    title: "Webhook",
+    description:
+      "Run the workflow when an external webhook request is received.",
+    icon: MdOutlineWebhook,
+  },
+  {
+    id: "schedule",
+    value: "schedule",
+    title: "Schedule",
+    description: "Run the workflow automatically on a scheduled interval.",
+    icon: MdSchedule,
+  },
+  {
+    id: "manual",
+    value: "manual",
+    title: "Manual",
+    description: "Run the workflow manually from the workflow builder.",
+    icon: PiHandTapBold,
   },
 ];
