@@ -1,13 +1,17 @@
+@use "../../../../styles/abstracts/colors" as *;
+
 .header-profile {
   width: 40px;
   height: 40px;
   cursor: pointer;
-  color: #ffffff;
+  color: $text-secondary;
   font-size: 16px;
   font-weight: 600;
   transition: all 0.2s ease;
+  background: $primary-bg;
 
   &:hover {
-    background: #4338ca;
+    background: $primary;
+    color: $white;
   }
 }

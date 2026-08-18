@@ -1,5 +1,7 @@
+@use "../../../styles/abstracts/colors" as *;
+
 .sidebar {
-  border-right: 1px solid #c6cfdc;
+  border-right: 1px solid $border;
   .sidebar-content {
     display: flex;
     justify-content: center;
@@ -17,7 +19,7 @@
 
       .title-logo {
         margin: 0;
-        color: #4f46e5;
+        color: $primary;
         white-space: nowrap;
         overflow: hidden;
       }

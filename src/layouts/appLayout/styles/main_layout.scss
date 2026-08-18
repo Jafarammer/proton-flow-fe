@@ -1,12 +1,14 @@
+@use "../../../styles/abstracts/colors" as *;
+
 .main-layout {
   height: 100vh;
   .content {
     margin: 24px 16px;
     padding: 16px;
     height: calc(100vh - 108px);
-    background-color: white;
+    background-color: $background;
     border-radius: 10px;
-    border: 1px solid #c6cfdc;
+    border: 1px solid $border;
     overflow-y: auto;
   }
 }

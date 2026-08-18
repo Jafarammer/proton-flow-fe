@@ -1,10 +1,12 @@
+@use "../../../styles/abstracts/colors" as *;
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0;
-  background-color: white;
-  border-bottom: 1px solid #c6cfdc;
+  background-color: $background;
+  border-bottom: 1px solid $border;
   .header-content {
     display: flex;
     justify-content: space-between;
