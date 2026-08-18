@@ -98,7 +98,7 @@ const ProviderCard = ({
               block
               onClick={() => onConfigure(data)}
               color="primary"
-              variant="outlined"
+              variant="filled"
             >
               Configure
             </Button>
@@ -118,7 +118,7 @@ const ProviderCard = ({
               block
               onClick={() => onDocumentation(data)}
               color="primary"
-              variant="outlined"
+              variant="filled"
             >
               Documentation
             </Button>

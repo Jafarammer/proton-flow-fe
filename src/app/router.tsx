@@ -9,6 +9,8 @@ import CreateWorkflowPage from "../features/workflows/pages/CreateWorkflowPage";
 import TemplateListPage from "../features/templates/pages/TemplateListPage";
 // Integrations
 import IntegrationListPage from "../features/integrations/pages/IntegrationListPage";
+// Profile
+import ProfilePage from "../features/profile/pages/ProfilePage";
 // Pages
 import NotFoundPage from "../pages/NotFoundPage";
 
@@ -47,6 +49,10 @@ export const router = createBrowserRouter([
       {
         path: "integrations",
         element: <IntegrationListPage />,
+      },
+      {
+        path: "profile",
+        element: <ProfilePage />,
       },
     ],
   },

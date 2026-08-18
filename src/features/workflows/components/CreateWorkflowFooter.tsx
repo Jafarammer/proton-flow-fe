@@ -19,7 +19,7 @@ const CreateWorkflowFooter = ({
       <Button
         onClick={onCancel}
         color="primary"
-        variant="outlined"
+        variant="filled"
         block
         className="btn"
       >

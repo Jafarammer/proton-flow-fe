@@ -49,7 +49,7 @@ const TemplateCard = ({
         <Button
           block
           color="primary"
-          variant="outlined"
+          variant="filled"
           className="btn"
           onClick={() => onPreview(data)}
         >

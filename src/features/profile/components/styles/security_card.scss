@@ -1,0 +1,141 @@
+.security-card {
+  height: max-content;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 28px;
+
+  .security-section-title {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+
+    .layout-label {
+      .label-title {
+        margin: 0px 0px 4px 0px;
+        font-size: 20px;
+      }
+      .label-description {
+        margin: 0;
+        font-size: 14px;
+      }
+    }
+
+    .security-icon {
+      width: 52px;
+      height: 52px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      background: #f8f9ff;
+      border-radius: 10px;
+      color: #4f46e5;
+      transition: all 0.2s ease;
+    }
+  }
+
+  .security-item {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .security-info {
+      .info-title {
+        margin-bottom: 4px;
+        font-size: 20px;
+      }
+
+      .info-description {
+        font-size: 14px;
+        margin: 0;
+      }
+    }
+
+    .btn {
+      width: 172px;
+    }
+  }
+
+  &:hover {
+    background: #f8f9ff;
+    transform: translateY(-2px);
+  }
+}
+
+@media (max-width: 767px) {
+  .security-card {
+    padding: 0px !important;
+
+    .security-section-title {
+      .security-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+      }
+
+      .layout-label {
+        .label-title {
+          font-size: 14px;
+        }
+        .label-description {
+          font-size: 10px;
+        }
+      }
+    }
+
+    .security-item {
+      .security-info {
+        .info-title {
+          font-size: 14px;
+        }
+
+        .info-description {
+          font-size: 10px;
+        }
+      }
+      .btn {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.modal-security-card {
+  .modal-title {
+    font-size: 20px !important;
+  }
+  .form {
+    .form-label {
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .input {
+      min-height: 40px;
+    }
+
+    .password-modal-actions {
+      margin-top: 24px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .modal-security-card {
+    .modal-title {
+      font-size: 14px !important;
+    }
+
+    .form {
+      .form-label {
+        font-size: 10px;
+      }
+      .input {
+        font-size: 10px;
+      }
+    }
+  }
+}
