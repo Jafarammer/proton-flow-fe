@@ -1,5 +1,5 @@
 // UI Library
-import { Button, Card, Form, Input, Modal, Typography } from "antd";
+import { Button, Card, Form, Input, Typography } from "antd";
 // icon
 import { LuKeyRound, LuShieldCheck } from "react-icons/lu";
 // types

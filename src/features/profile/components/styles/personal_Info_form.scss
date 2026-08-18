@@ -77,6 +77,10 @@
   }
 
   .form {
+    .ant-form-item-explain-error {
+      margin-top: 4px !important;
+      font-size: 12px !important;
+    }
     .form-label {
       font-size: 14px;
       font-weight: 600;
@@ -161,6 +165,9 @@
     }
 
     .form {
+      .ant-form-item-explain-error {
+        font-size: 8px !important;
+      }
       .form-label {
         font-size: 10px;
       }
