@@ -1,3 +1,5 @@
+@use "../../../../styles/abstracts/colors" as *;
+
 .workflow-starting-point {
   width: 100%;
 
@@ -20,7 +22,7 @@
 
     .starting-point-card {
       min-height: 220px;
-      border: 1px solid #cbd5e1;
+      border: 1px solid $border;
       border-radius: 10px;
       cursor: pointer;
 
@@ -30,17 +32,16 @@
         box-shadow 0.2s ease;
 
       &:hover {
-        border-color: #4f46e5;
-        background: #fafbff;
+        background: $background-layout;
         transform: translateY(-2px);
       }
 
       &.selected {
-        border: 2px solid #4f46e5;
-        background: #fafbff;
+        border: 1.5px solid $primary;
+        background: $primary-bg;
         .starting-point-icon {
-          color: #ffffff;
-          background: #4f46e5;
+          color: $white;
+          background: $primary;
         }
       }
     }
@@ -59,8 +60,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        color: #4f46e5;
-        background: #fafbff;
+        color: $primary;
+        background: $primary-bg;
         border-radius: 50%;
         transition: all 0.2s ease;
       }
@@ -83,7 +84,7 @@
 
   .starting-point-error {
     margin-top: 4px;
-    color: #ff4d4f;
+    color: $error;
     font-size: 12px;
   }
 }

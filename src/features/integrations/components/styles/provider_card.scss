@@ -124,7 +124,7 @@
 
     .provider-key {
       padding: 8px 10px;
-      background: $primary-bg;
+      background: $background-layout;
       font-size: 10px;
       border-radius: 10px;
       display: flex;
@@ -162,7 +162,7 @@
   }
 
   &:hover {
-    background: $primary-bg;
+    background: $background-layout;
     transform: translateY(-2px);
   }
 }

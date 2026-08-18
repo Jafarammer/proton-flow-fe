@@ -1,6 +1,8 @@
+@use "../../../../styles/abstracts/colors" as *;
+
 .personal-info-form {
   height: 100%;
-  border: 1px solid #cbd5e1;
+  border: 1px solid $border;
   border-radius: 10px;
   padding: 28px;
 
@@ -27,9 +29,9 @@
       font-size: 24px;
       justify-content: center;
       align-items: center;
-      background: #f8f9ff;
+      background: $primary-bg;
       border-radius: 10px;
-      color: #4f46e5;
+      color: $primary;
       transition: all 0.2s ease;
     }
   }
@@ -44,8 +46,8 @@
       position: relative;
 
       .avatar {
-        background: #f8f9ff;
-        color: #4f46e5;
+        background: $primary-bg;
+        color: $primary;
         font-size: 28px;
         font-weight: 700;
         width: 96px;
@@ -57,9 +59,9 @@
         right: -4px;
         width: 40px;
         bottom: 0;
-        background: white;
-        border-color: #cbd5e1;
-        box-shadow: 0 2px 8px rgba(15, 23, 42, 0.12);
+        background: $background-layout;
+        border-color: $border;
+        box-shadow: $shadow;
       }
     }
 
@@ -109,7 +111,7 @@
   }
 
   &:hover {
-    background: #f8f9ff;
+    background: $background-layout;
     transform: translateY(-2px);
   }
 }
