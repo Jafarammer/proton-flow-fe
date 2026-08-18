@@ -5,6 +5,8 @@ import { LuKeyRound, LuShieldCheck } from "react-icons/lu";
 // types
 import type { FormikProps } from "formik";
 import type { IChangePasswordForm } from "../types/components";
+// global components
+import { AppModal } from "../../../components/common";
 // styles scss
 import "./styles/security_card.scss";
 
@@ -55,13 +57,11 @@ const SecurityCard = ({ open, onClose, onOpen, formik }: SecurityCardProps) => {
       </div>
 
       {/* modal */}
-      <Modal
-        title={<span className="modal-title">Change Password</span>}
+      <AppModal
+        title="Change Password"
         open={open}
         onCancel={onClose}
-        footer={null}
-        destroyOnHidden
-        className="modal-security-card"
+        className="security-modal"
       >
         <Form layout="vertical" className="form">
           <Form.Item
@@ -145,7 +145,7 @@ const SecurityCard = ({ open, onClose, onOpen, formik }: SecurityCardProps) => {
             </Button>
           </div>
         </Form>
-      </Modal>
+      </AppModal>
     </Card>
   );
 };

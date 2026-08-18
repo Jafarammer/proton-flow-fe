@@ -101,10 +101,7 @@
   }
 }
 
-.modal-security-card {
-  .modal-title {
-    font-size: 20px !important;
-  }
+.security-modal {
   .form {
     .form-label {
       font-size: 14px;
@@ -124,11 +121,7 @@
 }
 
 @media (max-width: 767px) {
-  .modal-security-card {
-    .modal-title {
-      font-size: 14px !important;
-    }
-
+  .security-modal {
     .form {
       .form-label {
         font-size: 10px;
