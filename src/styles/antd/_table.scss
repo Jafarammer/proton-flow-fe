@@ -1,12 +1,14 @@
+@use "../abstracts/colors" as *;
+
 .ant-table-wrapper {
-  border: 1px solid #cbd5e1;
+  border: 1px solid $border;
   border-radius: 10px;
   overflow: hidden;
-  background: white !important;
+  background: $background;
 }
 
 .ant-table {
-  background: white !important;
+  background: $background !important;
 }
 
 .ant-table-thead {
@@ -14,11 +16,11 @@
     > th {
       height: 72px;
       padding: 16px 32px;
-      background: #f8f9ff !important;
-      color: #44465a !important;
+      background: $primary-bg !important;
+      color: $text !important;
       font-size: 14px;
       font-weight: 700;
-      border-bottom: 1px solid #cbd5e1 !important;
+      border-bottom: 1px solid $border !important;
 
       &::before {
         display: none;
@@ -32,19 +34,19 @@
     > td {
       padding: 20px 32px;
       font-size: 16px;
-      color: #44465a !important;
+      color: $text !important;
       border-bottom: 1px solid #cbd5e1 !important;
     }
     &:hover {
       > td {
-        background: #f8f9ff !important;
+        background: $primary-bg !important;
       }
     }
   }
 
   > tr:last-child {
     > td {
-      border-bottom: 1px solid #cbd5e1 !important;
+      border-bottom: 1px solid $border !important;
     }
   }
 }

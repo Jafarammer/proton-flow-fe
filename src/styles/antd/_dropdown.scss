@@ -1,4 +1,22 @@
-.ant-dropdown-menu-item:not(.ant-dropdown-menu-item-danger):hover
-  .ant-dropdown-menu-title-content {
-  color: #4f46e5 !important;
+@use "../abstracts/colors" as *;
+
+.ant-dropdown-menu-item {
+  transition: all 0.2s ease;
+  border-radius: 8px;
+
+  &:not(.ant-dropdown-menu-item-danger):hover {
+    background: $primary-bg !important;
+
+    .ant-dropdown-menu-title-content {
+      color: $primary !important;
+    }
+  }
+
+  &.ant-dropdown-menu-item-danger:hover {
+    background: #fef2f2 !important;
+
+    .ant-dropdown-menu-title-content {
+      color: $error !important;
+    }
+  }
 }

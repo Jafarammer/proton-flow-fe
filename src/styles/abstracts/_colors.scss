@@ -1,0 +1,114 @@
+/* ==========================================================
+   PRIMARY
+========================================================== */
+
+$primary: var(--ant-color-primary);
+$primary-hover: var(--ant-color-primary-hover);
+$primary-active: var(--ant-color-primary-active);
+
+$primary-bg: var(--ant-color-primary-bg);
+$primary-bg-hover: var(--ant-color-primary-bg-hover);
+$primary-bg-active: var(--ant-color-primary-bg-active);
+
+$primary-border: var(--ant-color-primary-border);
+$primary-border-hover: var(--ant-color-primary-border-hover);
+
+/* ==========================================================
+   SUCCESS
+========================================================== */
+
+$success: var(--ant-color-success);
+$success-hover: var(--ant-color-success-hover);
+$success-active: var(--ant-color-success-active);
+
+$success-bg: var(--ant-color-success-bg);
+$success-border: var(--ant-color-success-border);
+
+/* ==========================================================
+   WARNING
+========================================================== */
+
+$warning: var(--ant-color-warning);
+$warning-hover: var(--ant-color-warning-hover);
+$warning-active: var(--ant-color-warning-active);
+
+$warning-bg: var(--ant-color-warning-bg);
+$warning-border: var(--ant-color-warning-border);
+
+/* ==========================================================
+   ERROR
+========================================================== */
+
+$error: var(--ant-color-error);
+$error-hover: var(--ant-color-error-hover);
+$error-active: var(--ant-color-error-active);
+
+$error-bg: var(--ant-color-error-bg);
+$error-border: var(--ant-color-error-border);
+
+/* ==========================================================
+   INFO
+========================================================== */
+
+$info: var(--ant-color-info);
+$info-hover: var(--ant-color-info-hover);
+$info-active: var(--ant-color-info-active);
+
+$info-bg: var(--ant-color-info-bg);
+$info-border: var(--ant-color-info-border);
+
+/* ==========================================================
+   TEXT
+========================================================== */
+
+$text: var(--ant-color-text);
+$text-secondary: var(--ant-color-text-secondary);
+$text-tertiary: var(--ant-color-text-tertiary);
+$text-disabled: var(--ant-color-text-disabled);
+
+/* ==========================================================
+   BACKGROUND
+========================================================== */
+
+$background: var(--ant-color-bg-container);
+$background-layout: var(--ant-color-bg-layout);
+$background-elevated: var(--ant-color-bg-elevated);
+$background-mask: var(--ant-color-bg-mask);
+
+/* ==========================================================
+   BORDER
+========================================================== */
+
+$border: var(--ant-color-border);
+$border-secondary: var(--ant-color-border-secondary);
+
+/* ==========================================================
+   FILL
+========================================================== */
+
+$fill: var(--ant-color-fill);
+$fill-secondary: var(--ant-color-fill-secondary);
+$fill-tertiary: var(--ant-color-fill-tertiary);
+$fill-quaternary: var(--ant-color-fill-quaternary);
+
+/* ==========================================================
+   LINK
+========================================================== */
+
+$link: var(--ant-color-link);
+$link-hover: var(--ant-color-link-hover);
+$link-active: var(--ant-color-link-active);
+
+/* ==========================================================
+   WHITE & BLACK
+========================================================== */
+
+$white: #ffffff;
+$black: #000000;
+
+/* ==========================================================
+   SHADOW
+========================================================== */
+
+$shadow: rgba(15, 23, 42, 0.08);
+$shadow-lg: rgba(15, 23, 42, 0.12);

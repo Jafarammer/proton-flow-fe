@@ -1,3 +1,5 @@
+@use "../../../../styles/abstracts/colors" as *;
+
 .work-flows-table {
   width: 100%;
 
@@ -26,7 +28,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #f8f9ff;
+    background: $primary-bg;
     border-radius: 10px;
     color: #4f46e5;
     font-size: 24px;
@@ -44,7 +46,7 @@
   }
 
   .workflow-id {
-    color: #64748b;
+    color: $text-secondary;
     font-size: 14px;
     font-weight: 400;
   }
@@ -62,19 +64,19 @@
   }
 
   .workflow-status-active {
-    color: #15803d;
-    background: #dcfce7;
+    color: $success;
+    background: $success-hover;
   }
   .workflow-status-error {
-    color: #b91c1c;
-    background: #fee2e2;
+    color: $error;
+    background: $error-hover;
   }
   .workflow-status-paused {
-    color: #b45309;
-    background: #fef3c7;
+    color: $warning;
+    background: $warning-hover;
   }
   .workflow-status-draft {
-    color: #64748b;
-    background: #e2e8f0;
+    color: $text;
+    background: $fill-secondary;
   }
 }
