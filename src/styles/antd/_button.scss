@@ -1,3 +1,5 @@
+@use "../abstracts/colors" as *;
+
 .ant-btn {
   font-size: 14px !important;
   height: 40px !important;
@@ -6,5 +8,13 @@
 @media (max-width: 767px) {
   .ant-btn {
     font-size: 12px !important;
+  }
+}
+
+.ant-btn-color-primary.ant-btn-variant-filled {
+  border: 1px solid $primary;
+
+  &:hover {
+    border: 1px solid $primary !important;
   }
 }

@@ -76,7 +76,10 @@ const ProviderCard = ({
           {data.status === "connected" && (
             <div className="provider-key">
               <Text className="provider-key-text">{data.apiKey}</Text>
-              <Button type="text" icon={<IoCopyOutline size={20} />} />
+              <Button
+                type="text"
+                icon={<IoCopyOutline size={20} className="icon" />}
+              />
             </div>
           )}
           {data.status === "disconnected" && (
