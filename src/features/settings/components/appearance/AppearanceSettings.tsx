@@ -33,7 +33,15 @@ const AppearanceSettings = ({
     <div className="appearance-settings">
       <div className="appearance-grid">
         <div className="appearance-settings-content">
+          {/* theme selector */}
           <ThemeSelector value={appearance.theme} onChange={onChangeTheme} />
+          {/* color selector */}
+          <ColorSelector
+            primaryColor={appearance.primaryColor}
+            secondaryColor={appearance.secondaryColor}
+            onChangePrimary={onChangePrimaryColor}
+            onChangeSecondary={onChangeSecondaryColor}
+          />
 
           <div className="appearance-actions">
             <Button color="primary" variant="filled" onClick={onReset}>
