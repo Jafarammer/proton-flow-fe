@@ -11,6 +11,8 @@ import TemplateListPage from "../features/templates/pages/TemplateListPage";
 import IntegrationListPage from "../features/integrations/pages/IntegrationListPage";
 // Profile
 import ProfilePage from "../features/profile/pages/ProfilePage";
+// settings
+import SettingPage from "../features/settings/pages/SettingPage";
 // Pages
 import NotFoundPage from "../pages/NotFoundPage";
 
@@ -49,6 +51,10 @@ export const router = createBrowserRouter([
       {
         path: "integrations",
         element: <IntegrationListPage />,
+      },
+      {
+        path: "settings",
+        element: <SettingPage />,
       },
       {
         path: "profile",

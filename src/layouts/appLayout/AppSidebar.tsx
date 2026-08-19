@@ -2,7 +2,7 @@ import { Layout, Menu, Avatar, Typography, Button } from "antd";
 import { useNavigate } from "react-router-dom";
 import { MdOutlineDashboard, MdElectricBolt } from "react-icons/md";
 import { GoWorkflow, GoProjectTemplate } from "react-icons/go";
-import { IoExtensionPuzzleOutline } from "react-icons/io5";
+import { IoExtensionPuzzleOutline, IoSettingsOutline } from "react-icons/io5";
 import { FaPlusCircle } from "react-icons/fa";
 import "./styles/app_sidebar.scss";
 
@@ -73,6 +73,11 @@ const AppSidebar = ({ collapse }: SidebarProps) => {
             key: "/integrations",
             icon: <IoExtensionPuzzleOutline size={24} />,
             label: "Integration",
+          },
+          {
+            key: "/settings",
+            icon: <IoSettingsOutline size={24} />,
+            label: "Settings",
           },
         ]}
       />
