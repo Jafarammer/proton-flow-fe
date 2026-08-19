@@ -8,16 +8,30 @@ import PageLayout from "../../../layouts/appLayout/PageLayout";
 import AppearanceSettings from "../components/appearance/AppearanceSettings";
 import BuilderSettings from "../components/builder/BuilderSettings";
 import StatisticsSettings from "../components/statistics/StatisticsSettings";
+// hooks
+import useSettingsAppearance from "../hooks/useSettingsAppearance";
 // styles
 import "./styles/setting_page.scss";
 
 const SettingPage = () => {
+  // hooks
+  const settingsAppearance = useSettingsAppearance();
   // config tabs
   const items: TabsProps["items"] = [
     {
       key: "appearance",
       label: "Appearance",
-      children: <AppearanceSettings />,
+      children: (
+        <AppearanceSettings
+          appearance={settingsAppearance.appearance}
+          onChangePrimaryColor={settingsAppearance.onChangePrimaryColor}
+          onChangeSecondaryColor={settingsAppearance.onChagneSecondaryColor}
+          onChangeBorderRadius={settingsAppearance.onChangeBorderRadius}
+          onChangeTheme={settingsAppearance.onChangeTheme}
+          onReset={settingsAppearance.onResetAppearance}
+          onSave={settingsAppearance.onSaveAppearance}
+        />
+      ),
     },
     {
       key: "builder",
