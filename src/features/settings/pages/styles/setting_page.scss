@@ -1,8 +1,9 @@
 @use "../../../../styles/abstracts/colors" as *;
 
 .setting-page {
+  width: 100%;
+  min-width: 248px;
   padding: 0px 20px;
-  min-width: 256px;
 
   .settings-tabs {
     margin-top: 32px;
@@ -30,5 +31,11 @@
       height: 4px;
       border-radius: 3px 3px 0 0;
     }
+  }
+}
+
+@media (max-width: 567px) {
+  .setting-page {
+    padding: 0px 12px;
   }
 }

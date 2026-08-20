@@ -42,6 +42,11 @@ const AppearanceSettings = ({
             onChangePrimary={onChangePrimaryColor}
             onChangeSecondary={onChangeSecondaryColor}
           />
+          {/* radius selector */}
+          <RadiusSelector
+            value={appearance.borderRadius}
+            onChange={onChangeBorderRadius}
+          />
 
           <div className="appearance-actions">
             <Button color="primary" variant="filled" onClick={onReset}>
