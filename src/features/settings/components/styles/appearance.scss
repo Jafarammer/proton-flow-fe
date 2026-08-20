@@ -19,6 +19,11 @@
     min-width: 0;
   }
 
+  .section-content {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+  }
   // theme selector
   .theme-card {
     border: 1px solid $border;
@@ -186,12 +191,108 @@
       }
     }
   }
+
+  // action
+  .appearance-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+
+    .btn {
+      min-width: 140px;
+    }
+  }
+
+  // preview
+  .preview-card {
+    width: 100%;
+    min-width: 0;
+    position: sticky;
+    top: 24px;
+    height: max-content;
+
+    .preview-card-header {
+      padding-bottom: 20px;
+      border-bottom: 1px solid $border;
+
+      .header-title {
+        margin: 0 0 6px 0;
+        color: $text;
+        font-size: 18px;
+        font-weight: 700;
+      }
+      .header-description {
+        margin: 0;
+      }
+    }
+
+    .preview-content {
+      margin-top: 20px;
+      padding: 24px;
+      background: $background-layout;
+      border: 1px solid $border;
+      transition: all 0.2s ease;
+    }
+
+    .preview-logo {
+      width: 52px;
+      height: 52px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $white;
+      border-radius: 10px;
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .preview-actions {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .preview-info {
+      margin-top: 20px;
+      padding: 16px;
+      border: 1px solid;
+    }
+  }
+}
+
+@media (max-width: 1439px) {
+  .appearance-settings {
+    .radius-card {
+      .radius-settings {
+        .radio-group {
+          flex-direction: column !important;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 991px) {
   .appearance-settings {
     .appearance-grid {
       grid-template-columns: 1fr;
+    }
+
+    .radius-card {
+      .radius-settings {
+        .radio-group {
+          flex-direction: row !important;
+        }
+      }
+    }
+
+    .section-content {
+      flex-direction: column;
+    }
+
+    .preview-card {
+      position: static;
     }
   }
 }
@@ -204,11 +305,25 @@
       }
     }
 
+    .appearance-actions {
+      flex-direction: column-reverse;
+
+      .btn {
+        width: 100%;
+      }
+    }
+
     .radius-card {
       .radius-settings {
         .radio-group {
-          flex-direction: column;
+          flex-direction: column !important;
         }
+      }
+    }
+
+    .preview-card {
+      .preview-actions {
+        grid-template-columns: 1fr;
       }
     }
   }
