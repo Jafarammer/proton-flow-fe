@@ -44,13 +44,23 @@ const AppearancePreview = ({ appearance }: AppearancePreviewProps) => {
         <div className="preview-actions">
           <Button
             style={{
-              color: "#fff",
               backgroundColor: appearance.primaryColor,
             }}
+            variant="solid"
+            color="primary"
           >
             Primary Actions
           </Button>
-          <Button>Secondary</Button>
+          <Button
+            style={{
+              color: appearance.primaryColor,
+              borderColor: appearance.primaryColor,
+            }}
+            color={"primary"}
+            variant="outlined"
+          >
+            Secondary Actions
+          </Button>
         </div>
 
         <div
