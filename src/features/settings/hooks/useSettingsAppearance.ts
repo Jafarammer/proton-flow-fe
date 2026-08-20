@@ -3,51 +3,65 @@ import { useState } from "react";
 import type { ThemeMode, IAppearanceSettings } from "../types/appearance";
 // constants
 import { appearanceInitialValues } from "../constants";
+// app
+import { useAppTheme } from "../../../app/providers/AppThemeProvider";
 
 const useSettingsAppearance = () => {
+  // context
+  const { appearance: currentAppearance, updateAppearance } = useAppTheme();
+
   // useState
   const [appearance, setAppearance] = useState<IAppearanceSettings>(
-    appearanceInitialValues,
+    currentAppearance ?? appearanceInitialValues,
   );
-  // function
+
+  // functions
   const onChangeTheme = (theme: ThemeMode): void => {
     setAppearance((prev) => ({
       ...prev,
       theme,
     }));
   };
+
   const onChangePrimaryColor = (primaryColor: string): void => {
     setAppearance((prev) => ({
       ...prev,
       primaryColor,
     }));
   };
-  const onChagneSecondaryColor = (secondaryColor: string): void => {
+
+  const onChangeSecondaryColor = (secondaryColor: string): void => {
     setAppearance((prev) => ({
       ...prev,
       secondaryColor,
     }));
   };
+
   const onChangeBorderRadius = (borderRadius: number): void => {
     setAppearance((prev) => ({
       ...prev,
       borderRadius,
     }));
   };
+
   const onResetAppearance = (): void => {
     setAppearance(appearanceInitialValues);
   };
+
   const onSaveAppearance = (): void => {
-    localStorage.setItem("appearance-settings", JSON.stringify(appearance));
+    updateAppearance(appearance);
+
     alert("Appearance settings saved");
   };
 
   return {
     appearance,
+
     onChangeTheme,
     onChangePrimaryColor,
-    onChagneSecondaryColor,
+    onChangeSecondaryColor,
     onChangeBorderRadius,
+
     onResetAppearance,
     onSaveAppearance,
   };

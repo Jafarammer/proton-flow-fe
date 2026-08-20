@@ -25,7 +25,7 @@ const SettingPage = () => {
         <AppearanceSettings
           appearance={settingsAppearance.appearance}
           onChangePrimaryColor={settingsAppearance.onChangePrimaryColor}
-          onChangeSecondaryColor={settingsAppearance.onChagneSecondaryColor}
+          onChangeSecondaryColor={settingsAppearance.onChangeSecondaryColor}
           onChangeBorderRadius={settingsAppearance.onChangeBorderRadius}
           onChangeTheme={settingsAppearance.onChangeTheme}
           onReset={settingsAppearance.onResetAppearance}
