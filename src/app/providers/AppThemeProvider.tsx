@@ -11,6 +11,7 @@ import { baseTheme } from "../../utils/Theme";
 
 interface AppThemeContextProps {
   appearance: IAppearanceSettings;
+  isDark: boolean;
   updateAppearance: (value: IAppearanceSettings) => void;
 }
 
@@ -51,7 +52,7 @@ const AppThemeProvider = ({ children }: AppThemeProviderProps) => {
   };
 
   return (
-    <AppThemeContext.Provider value={{ appearance, updateAppearance }}>
+    <AppThemeContext.Provider value={{ appearance, isDark, updateAppearance }}>
       <ConfigProvider
         theme={{
           ...baseTheme,

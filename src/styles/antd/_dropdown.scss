@@ -13,7 +13,7 @@
   }
 
   &.ant-dropdown-menu-item-danger:hover {
-    background: #fef2f2 !important;
+    background: $error-bg !important;
 
     .ant-dropdown-menu-title-content {
       color: $error !important;

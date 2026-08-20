@@ -4,6 +4,7 @@ import { MdOutlineDashboard, MdElectricBolt } from "react-icons/md";
 import { GoWorkflow, GoProjectTemplate } from "react-icons/go";
 import { IoExtensionPuzzleOutline, IoSettingsOutline } from "react-icons/io5";
 import { FaPlusCircle } from "react-icons/fa";
+import { useAppTheme } from "../../app/providers/AppThemeProvider";
 import "./styles/app_sidebar.scss";
 
 const { Sider } = Layout;
@@ -15,6 +16,9 @@ interface SidebarProps {
 
 const AppSidebar = ({ collapse }: SidebarProps) => {
   const navigate = useNavigate();
+  const { isDark } = useAppTheme();
+
+  const sidebarTheme = isDark ? "dark" : "light";
 
   return (
     <Sider
@@ -22,7 +26,7 @@ const AppSidebar = ({ collapse }: SidebarProps) => {
       trigger={null}
       collapsible
       collapsed={collapse}
-      theme="light"
+      theme={sidebarTheme}
       className="sidebar"
     >
       <div className="sidebar-content">
@@ -49,7 +53,7 @@ const AppSidebar = ({ collapse }: SidebarProps) => {
       </div>
 
       <Menu
-        theme="light"
+        theme={sidebarTheme}
         mode="inline"
         defaultSelectedKeys={["/dashboard"]}
         onClick={({ key }) => navigate(key)}
