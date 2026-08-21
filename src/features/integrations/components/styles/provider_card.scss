@@ -73,15 +73,15 @@
     }
 
     .provider-status-connected {
-      color: #15803d;
-      background: #dcfce7;
-      border-color: #bbf7d0;
+      color: $success;
+      background: $success-bg;
+      border-color: $success-border;
     }
 
     .provider-status-disconnected {
-      color: #64748b;
-      background: #f1f5f9;
-      border-color: #e2e8f0;
+      color: $text-disabled;
+      background: $background;
+      border-color: $border;
     }
   }
 

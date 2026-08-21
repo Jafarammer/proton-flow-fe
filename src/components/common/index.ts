@@ -1,3 +1,4 @@
 import AppModal from "./AppModal";
+import ComingSoon from "./ComingSoon";
 
-export { AppModal };
+export { AppModal,ComingSoon };
