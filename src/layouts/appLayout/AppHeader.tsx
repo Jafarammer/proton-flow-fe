@@ -23,11 +23,12 @@ const AppHeader = ({ collapse, setCollapse }: HeaderProps) => {
         type="text"
         icon={
           collapse ? (
-            <IoIosArrowDroprightCircle color="#64748B" size={20} />
+            <IoIosArrowDroprightCircle size={20} />
           ) : (
-            <IoIosArrowDropleftCircle color="#64748B" size={20} />
+            <IoIosArrowDropleftCircle size={20} />
           )
         }
+        className="btn"
         onClick={() => setCollapse(!collapse)}
       />
       <div className="header-content">

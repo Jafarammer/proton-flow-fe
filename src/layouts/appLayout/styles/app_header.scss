@@ -7,11 +7,22 @@
   padding: 0;
   background-color: $background;
   border-bottom: 1px solid $border;
+
+  .btn {
+    margin-left: 8px;
+    color: $background-mask;
+    background: none !important;
+    &:hover {
+      color: $primary !important;
+    }
+  }
+
   .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0px 32px 0px 32px;
     width: 100%;
+    gap: 8px;
   }
 }
