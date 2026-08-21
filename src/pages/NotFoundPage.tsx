@@ -11,6 +11,7 @@ const { Title, Text } = Typography;
 
 const NotFoundPage = () => {
   const navigate = useNavigate();
+
   return (
     <div className="not-found-page">
       <NotFound />

@@ -11,6 +11,11 @@
   width: 280px;
 }
 
+.app-root {
+  background: var(--ant-color-bg-layout);
+  color: var(--ant-color-text);
+}
+
 html,
 body,
 #root {
@@ -19,5 +24,6 @@ body,
   width: 100%;
   min-height: 100%;
   font-family: "Ubuntu", sans-serif;
+  // background: var(--ant-color-bg-container) !important;
   // letter-spacing: 0.5px;
 }
