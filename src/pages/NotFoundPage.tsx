@@ -14,7 +14,7 @@ const NotFoundPage = () => {
 
   return (
     <div className="not-found-page">
-      <NotFound />
+      <NotFound className="img" />
 
       <Title level={3}>Page Not Found</Title>
       <Text type="secondary">

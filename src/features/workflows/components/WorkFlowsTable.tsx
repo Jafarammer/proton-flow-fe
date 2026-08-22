@@ -1,5 +1,7 @@
 // UI Library
 import { Table } from "antd";
+// global components
+import { EmptyData } from "../../../components/common";
 // type
 import type { IWorkflowData } from "../types/components";
 // config table
@@ -30,6 +32,14 @@ const WorkFlowsTable = ({
           pageSize: 5,
           showSizeChanger: false,
           position: ["bottomRight"],
+        }}
+        locale={{
+          emptyText: (
+            <EmptyData
+              title="No workflows found"
+              description="Create your first workflow to get started."
+            />
+          ),
         }}
       />
     </div>

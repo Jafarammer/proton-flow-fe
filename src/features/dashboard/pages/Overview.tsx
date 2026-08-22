@@ -17,9 +17,9 @@ const Overview = () => {
       className="overview-page"
     >
       <div className="overview-content">
-        <ComingSoon />
-        <Title level={3}>Coming Soon</Title>
+        <ComingSoon className="img" />
 
+        <Title level={3}>Coming Soon</Title>
         <Text type="secondary">
           This feature is currently under development.
         </Text>

@@ -1,5 +1,5 @@
 import { theme } from "antd";
-import notFoundSvg from "../../assets/images/not_found.svg?raw";
+import notFoundSvg from "../../assets/images/404-Error.svg?raw";
 
 interface NotFoundProps {
   className?: string;
@@ -10,14 +10,8 @@ const NotFound = ({ className }: NotFoundProps) => {
 
   const themedSvg = notFoundSvg
     // primary accent
-    .replace(/#6c63ff/gi, token.colorPrimary)
-
-    // dark illustration
-    .replace(/#3f3d56/gi, token.colorText)
-
-    // border / line illustration
-    .replace(/#cacaca/gi, token.colorBorder)
-    .replace(/#ccc/gi, token.colorBorder);
+    .replace(/#407BFF/gi, token.colorPrimary)
+    .replace(/#ebebeb/gi, token.colorBgBase);
 
   return (
     <div
