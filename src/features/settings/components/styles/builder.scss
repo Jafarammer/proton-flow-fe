@@ -11,3 +11,12 @@
     height: 320px;
   }
 }
+
+@media (max-width: 576px) {
+  .builder-settings {
+    .img {
+      width: 220px;
+      height: 220px;
+    }
+  }
+}

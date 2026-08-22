@@ -16,3 +16,14 @@
     }
   }
 }
+
+@media (max-width: 567px) {
+  .overview-page {
+    .overview-content {
+      .img {
+        width: 220px !important;
+        height: 220px !important;
+      }
+    }
+  }
+}

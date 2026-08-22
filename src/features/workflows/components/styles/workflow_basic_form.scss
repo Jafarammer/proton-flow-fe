@@ -6,6 +6,8 @@
   background: $background-layout;
   border: 1px solid $border;
   border-radius: 10px;
+  width: 100%;
+  min-width: 0;
 
   .ant-form {
     display: flex;

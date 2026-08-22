@@ -5,6 +5,8 @@
   border: 1px solid $border;
   border-radius: 10px;
   padding: 28px;
+  width: 100%;
+  min-width: 0;
 
   .profile-section-title {
     display: flex;

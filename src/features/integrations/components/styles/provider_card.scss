@@ -5,6 +5,8 @@
   height: 440px;
   border: 1px solid $border;
   border-radius: 10px;
+  width: 100%;
+  min-width: 0;
   transition:
     border-color 0.2s ease,
     box-shadow 0.2s ease,
