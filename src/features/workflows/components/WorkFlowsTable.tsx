@@ -13,15 +13,18 @@ import "./styles/work_flows_table.scss";
 
 interface WorkflowTableProps {
   onEditWorkflow: (workFlow: IWorkflowData) => void;
-  onDeleteWorkflow: (workFlow: IWorkflowData) => void;
+  onConfirmDeleteWorkflow: (workflow: IWorkflowData) => void;
 }
 
 const WorkFlowsTable = ({
   onEditWorkflow,
-  onDeleteWorkflow,
+  onConfirmDeleteWorkflow,
 }: WorkflowTableProps) => {
   // config
-  const columns = getWorkflowColumns({ onEditWorkflow, onDeleteWorkflow });
+  const columns = getWorkflowColumns({
+    onEditWorkflow,
+    onConfirmDeleteWorkflow,
+  });
   return (
     <div className="work-flows-table">
       <Table<IWorkflowData>

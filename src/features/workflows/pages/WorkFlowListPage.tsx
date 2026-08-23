@@ -3,6 +3,7 @@ import PageLayout from "../../../layouts/appLayout/PageLayout";
 // components
 import WorkFlowsFilter from "../components/WorkFlowsFilter";
 import WorkFlowsTable from "../components/WorkFlowsTable";
+import DeleteWorkflowModal from "../components/DeleteWorkflowModal";
 // hooks
 import useWorkflows from "../hooks/useWorkFlows";
 // styles
@@ -28,7 +29,16 @@ const WorkFlowListPage = () => {
 
       <WorkFlowsTable
         onEditWorkflow={(item) => workflows.onEditWorkflow(item.id)}
-        onDeleteWorkflow={(item) => workflows.onDeleteWorkflow(item.id)}
+        onConfirmDeleteWorkflow={(item) =>
+          workflows.onConfirmDeleteWorkflow(item)
+        }
+      />
+
+      <DeleteWorkflowModal
+        open={workflows.openModalDelete}
+        workflow={workflows.selectedWorkflow}
+        onClose={workflows.onCloseDeleteModal}
+        onDelete={workflows.onDeleteWorkflow}
       />
     </PageLayout>
   );

@@ -1,0 +1,14 @@
+.delete-workflow-modal {
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 20px;
+  }
+}

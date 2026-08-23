@@ -12,7 +12,7 @@ import { statusColorTable } from "../constants";
 
 interface WorkFlowColumnProps {
   onEditWorkflow: (workflow: IWorkflowData) => void;
-  onDeleteWorkflow: (workflow: IWorkflowData) => void;
+  onConfirmDeleteWorkflow: (workflow: IWorkflowData) => void;
 }
 
 const getWorkflowTableIcon = (index: number) => {
@@ -30,7 +30,7 @@ const getWorkflowTableIcon = (index: number) => {
 
 export const getWorkflowColumns = ({
   onEditWorkflow,
-  onDeleteWorkflow,
+  onConfirmDeleteWorkflow,
 }: WorkFlowColumnProps): TableColumnsType<IWorkflowData> => [
   {
     title: "NAME",
@@ -97,7 +97,7 @@ export const getWorkflowColumns = ({
           onEditWorkflow(record);
         }
         if (key === "delete") {
-          onDeleteWorkflow(record);
+          onConfirmDeleteWorkflow(record);
         }
       };
 

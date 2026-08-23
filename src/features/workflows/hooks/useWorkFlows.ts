@@ -2,7 +2,7 @@
 import { useState } from "react";
 // type props
 import type { MenuProps } from "antd";
-import type { DropdownOption } from "../types/components";
+import type { DropdownOption, IWorkflowData } from "../types/components";
 // constants
 import {
   workflowStatusOptions,
@@ -21,7 +21,15 @@ const useWorkflows = () => {
   const [sortFilter, setSortFilter] = useState<DropdownOption>(
     workflowSortOptions[0],
   );
+  const [selectedWorkflow, setSelectedWorkflow] =
+    useState<IWorkflowData | null>(null);
+  const [openModalDelete, setOpenModalDelete] = useState<boolean>(false);
   // functioin event
+  const onCloseDeleteModal = (): void => {
+    setOpenModalDelete(false);
+    setSelectedWorkflow(null);
+  };
+
   const onChangeStatus: MenuProps["onClick"] = ({ key }) => {
     const selected = workflowStatusOptions.find((item) => item.value === key);
 
@@ -48,8 +56,17 @@ const useWorkflows = () => {
     alert(`Edit ${workflowId}`);
   };
 
-  const onDeleteWorkflow = (workflowId: string) => {
-    alert(`Delete ${workflowId}`);
+  const onConfirmDeleteWorkflow = (workflow: IWorkflowData): void => {
+    setSelectedWorkflow(workflow);
+    setOpenModalDelete(true);
+  };
+
+  const onDeleteWorkflow = () => {
+    if (!selectedWorkflow) return;
+
+    alert(`Delete workflow: ${selectedWorkflow.name}`);
+
+    onCloseDeleteModal();
   };
 
   return {
@@ -61,6 +78,10 @@ const useWorkflows = () => {
     onChangeSortFilter,
     onEditWorkflow,
     onDeleteWorkflow,
+    selectedWorkflow,
+    openModalDelete,
+    onCloseDeleteModal,
+    onConfirmDeleteWorkflow,
   };
 };
 
