@@ -1,6 +1,6 @@
 @use "../../../../styles/abstracts/colors" as *;
 
-.login-form {
+.register-form {
   margin-top: 32px;
   border: 1px solid $border;
   width: 100%;
@@ -48,7 +48,7 @@
 }
 
 @media (max-width: 767px) {
-  .login-form {
+  .register-form {
     .form {
       .ant-form-item-explain-error {
         font-size: 8px !important;

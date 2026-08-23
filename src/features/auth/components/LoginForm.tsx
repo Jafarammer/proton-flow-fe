@@ -4,7 +4,6 @@ import { Card, Input, Button, Form, Typography } from "antd";
 // types
 import type { FormikProps } from "formik";
 import type { ILoginForm } from "../types/login";
-
 // styles
 import "./styles/login_form.scss";
 
@@ -49,6 +48,8 @@ const LoginForm = ({ formik }: LoginFormProps) => {
           <Input.Password
             name="password"
             className="input"
+            autoComplete="off"
+            value={formik.values.password}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
           />

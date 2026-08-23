@@ -11,6 +11,7 @@ import ProfilePage from "../features/profile/pages/ProfilePage";
 import SettingPage from "../features/settings/pages/SettingPage";
 // features auth
 import Login from "../features/auth/pages/Login";
+import Register from "../features/auth/pages/Register";
 // Pages
 import NotFoundPage from "../pages/NotFoundPage";
 
@@ -22,6 +23,10 @@ export const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
   },
   {
     element: <MainLayout />,
