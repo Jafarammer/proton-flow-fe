@@ -18,7 +18,7 @@ const HeaderProfile = () => {
       navigate("/profile");
     }
     if (key === "logout") {
-      alert("logout");
+      navigate("/login");
     }
   };
 

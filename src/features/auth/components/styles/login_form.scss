@@ -1,0 +1,73 @@
+@use "../../../../styles/abstracts/colors" as *;
+
+.login-form {
+  margin-top: 32px;
+  border: 1px solid $border;
+  width: 100%;
+
+  .form {
+    .ant-form-item-explain-error {
+      margin-top: 4px !important;
+      font-size: 12px !important;
+    }
+    .label {
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .input {
+      min-height: 40px;
+    }
+    .btn {
+      margin: 12px 0px;
+    }
+  }
+
+  .content-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+
+    .text {
+      font-size: inherit;
+    }
+    .link {
+      color: $primary;
+      font-size: inherit;
+      font-weight: 500;
+      text-decoration: none;
+
+      &:hover {
+        color: $primary-hover;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .login-form {
+    .form {
+      .ant-form-item-explain-error {
+        font-size: 8px !important;
+      }
+
+      .label {
+        font-size: 10px;
+      }
+
+      .input {
+        font-size: 10px;
+      }
+    }
+
+    .content-link {
+      .text {
+        font-size: 10px;
+      }
+
+      .link {
+        font-size: 10px;
+      }
+    }
+  }
+}
