@@ -104,7 +104,7 @@ const RegisterForm = ({ formik }: RegisterFormProps) => {
           loading={formik.isSubmitting}
           onClick={() => formik.submitForm()}
         >
-          Register
+          Create Account
         </Button>
       </Form>
 

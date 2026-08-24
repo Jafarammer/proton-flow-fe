@@ -55,6 +55,12 @@ const LoginForm = ({ formik }: LoginFormProps) => {
           />
         </Form.Item>
 
+        <div className="forgot-password-container">
+          <Link to="/forgot-password" className="forgot-password">
+            Forgot password?
+          </Link>
+        </div>
+
         <Button
           color="primary"
           variant="solid"

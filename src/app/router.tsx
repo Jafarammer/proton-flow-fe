@@ -12,6 +12,7 @@ import SettingPage from "../features/settings/pages/SettingPage";
 // features auth
 import Login from "../features/auth/pages/Login";
 import Register from "../features/auth/pages/Register";
+import ForgotPassword from "../features/auth/pages/ForgotPassword";
 // Pages
 import NotFoundPage from "../pages/NotFoundPage";
 
@@ -27,6 +28,10 @@ export const router = createBrowserRouter([
   {
     path: "/register",
     element: <Register />,
+  },
+  {
+    path: "/forgot-password",
+    element: <ForgotPassword />,
   },
   {
     element: <MainLayout />,
