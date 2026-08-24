@@ -28,6 +28,7 @@ const ForgotPasswordForm = ({ formik }: ForgotPasswordFormProps) => {
           <Input
             name="email"
             className="input"
+            placeholder="name@company.com"
             autoComplete="off"
             value={formik.values.email}
             onChange={formik.handleChange}

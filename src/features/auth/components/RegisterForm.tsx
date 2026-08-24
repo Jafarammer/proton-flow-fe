@@ -28,6 +28,7 @@ const RegisterForm = ({ formik }: RegisterFormProps) => {
           <Input
             className="input"
             name="fullName"
+            placeholder="Enter your name..."
             autoComplete="off"
             value={formik.values.fullName}
             onChange={formik.handleChange}
@@ -46,6 +47,7 @@ const RegisterForm = ({ formik }: RegisterFormProps) => {
           <Input
             className="input"
             name="email"
+            placeholder="Enter your email..."
             type={"email"}
             autoComplete="off"
             value={formik.values.email}
