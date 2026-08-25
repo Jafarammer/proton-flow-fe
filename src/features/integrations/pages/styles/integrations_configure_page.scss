@@ -1,12 +1,26 @@
+@use "../../../../styles/abstracts/colors" as *;
+
 .integrations-configure-page {
   width: 100%;
-  min-width: 0;
+  min-width: 248px;
 
   .integrations-configure-content {
     width: 100%;
-    max-width: 800px;
+    // max-width: 800px;
     display: flex;
     flex-direction: column;
     gap: 24px;
+  }
+
+  .divider {
+    margin: 32px 0;
+    border-top: 2px solid $border;
+  }
+
+  .integrations-configure-actions {
+    padding-top: 8px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
   }
 }

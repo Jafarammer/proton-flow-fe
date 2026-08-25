@@ -1,9 +1,11 @@
+@use "../../../../styles/abstracts/colors" as *;
+
 .create-workflow-page {
   width: 100%;
   min-width: 248px;
 
   .divider {
     margin: 32px 0;
-    border-top: 2px solid #cbd5e1;
+    border-top: 2px solid $border;
   }
 }
