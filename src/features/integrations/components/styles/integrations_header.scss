@@ -19,3 +19,11 @@
     }
   }
 }
+
+@media (max-width: 576px) {
+  .integrations-header {
+    .integrations-header-content {
+      flex-direction: column;
+    }
+  }
+}

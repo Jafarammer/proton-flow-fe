@@ -24,3 +24,14 @@
     margin: 16px 32px;
   }
 }
+
+@media (max-width: 576px) {
+  .integrations-model-configure {
+    .header {
+      padding: 16px 8px;
+      .header-description {
+        text-align: center;
+      }
+    }
+  }
+}

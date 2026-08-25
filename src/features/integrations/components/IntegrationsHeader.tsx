@@ -32,7 +32,7 @@ function IntegrationsHeader({
       </Button>
       <div className="integrations-header-content">
         <div className="header-label">
-          <Title level={2} className="label-title">
+          <Title level={3} className="label-title">
             {providerName}
           </Title>
           <Text type="secondary" className="label-description">

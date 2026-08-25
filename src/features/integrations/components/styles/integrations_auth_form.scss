@@ -41,3 +41,14 @@
     }
   }
 }
+
+@media (max-width: 576px) {
+  .integrations-auth-form {
+    .header {
+      padding: 16px 8px;
+      .header-description {
+        text-align: center;
+      }
+    }
+  }
+}
