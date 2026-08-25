@@ -1,4 +1,12 @@
 .integrations-configure-page {
   width: 100%;
   min-width: 0;
+
+  .integrations-configure-content {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
 }

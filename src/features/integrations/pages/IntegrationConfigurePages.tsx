@@ -5,6 +5,7 @@ import { Button } from "antd";
 import useIntegrationsConfigure from "../hooks/useIntegrationsConfigure";
 // component
 import IntegrationsHeader from "../components/IntegrationsHeader";
+import IntegrationsAuthForm from "../components/IntegrationsAuthForm";
 // constants
 import { providerConfigs } from "../constants";
 // styles
@@ -26,6 +27,16 @@ const IntegrationConfigurePages = () => {
         description={providerConfigs[provider ?? ""].description}
         onBack={() => navigate("/integrations")}
       />
+
+      <div className="integrations-configure-content">
+        <IntegrationsAuthForm
+          apiKey={integrationsConfigure.form.apiKey}
+          placeholder={providerConfigs[provider ?? ""].apiKeyPlaceholder}
+          testing={integrationsConfigure.testing}
+          onChange={integrationsConfigure.onChangeApiKey}
+          onTestConnection={integrationsConfigure.onTestConnection}
+        />
+      </div>
     </div>
   );
 };

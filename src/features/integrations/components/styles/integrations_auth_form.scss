@@ -1,0 +1,34 @@
+@use "../../../../styles/abstracts/colors" as *;
+
+.integrations-auth-form {
+  border: 1px solid $border;
+
+  .header {
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    .header-title {
+      margin: 0;
+    }
+    .header-description {
+      margin: 0;
+    }
+  }
+
+  .form {
+    .input {
+      min-height: 40px;
+    }
+
+    .api-key-help {
+      font-size: 12px;
+    }
+    .form-actions {
+      margin-top: 20px;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}
