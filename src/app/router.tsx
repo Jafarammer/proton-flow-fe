@@ -7,6 +7,7 @@ import WorkFlowListPage from "../features/workflows/pages/WorkFlowListPage";
 import CreateWorkflowPage from "../features/workflows/pages/CreateWorkflowPage";
 import TemplateListPage from "../features/templates/pages/TemplateListPage";
 import IntegrationListPage from "../features/integrations/pages/IntegrationListPage";
+import IntegrationConfigurePages from "../features/integrations/pages/IntegrationConfigurePages";
 import ProfilePage from "../features/profile/pages/ProfilePage";
 import SettingPage from "../features/settings/pages/SettingPage";
 // features auth
@@ -67,7 +68,16 @@ export const router = createBrowserRouter([
 
       {
         path: "integrations",
-        element: <IntegrationListPage />,
+        children: [
+          {
+            index: true,
+            element: <IntegrationListPage />,
+          },
+          {
+            path: ":provider",
+            element: <IntegrationConfigurePages />,
+          },
+        ],
       },
       {
         path: "settings",

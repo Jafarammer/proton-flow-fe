@@ -1,6 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import type { Provider } from "../types/component";
 
 const useIntegrations = () => {
+  // router
+  const navigate = useNavigate();
   // funtion event
   const onConnect = (provider: Provider) => {
     alert(`Connect ${provider.name}`);
@@ -10,6 +13,7 @@ const useIntegrations = () => {
   };
   const onConfigure = (provider: Provider) => {
     alert(`Configure ${provider.name}`);
+    navigate(`/integrations/${provider.id}`);
   };
   const onDocumentation = (provider: Provider) => {
     alert(`Open Documentation ${provider.name}`);

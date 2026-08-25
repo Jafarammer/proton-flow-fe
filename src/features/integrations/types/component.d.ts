@@ -1,9 +1,10 @@
 import type { IconType } from "react-icons";
+import type { ProviderType } from "./integrationsConfigure";
 
 export type ProviderStatus = "connected" | "disconnected";
 
 export interface Provider {
-  id: string;
+  id: ProviderType;
   name: string;
   type: string;
   description: string;

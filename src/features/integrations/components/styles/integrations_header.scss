@@ -1,0 +1,21 @@
+.integrations-header {
+  margin-bottom: 32px;
+
+  .integrations-header-content {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+
+    .header-label {
+      .label-title {
+        margin: 0;
+      }
+
+      .label-description {
+        margin: 0;
+      }
+    }
+  }
+}
