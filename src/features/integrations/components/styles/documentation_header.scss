@@ -1,0 +1,11 @@
+@use "../../../../styles/abstracts/colors" as *;
+
+.documentation-header {
+  padding-bottom: 32px;
+  border-bottom: 1px solid $border-secondary;
+
+  .title,
+  .desc {
+    margin: 0;
+  }
+}

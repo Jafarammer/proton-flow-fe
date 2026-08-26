@@ -1,4 +1,3 @@
-import React from "react";
 // constants
 import { documentationNavigation } from "../constants";
 // styles

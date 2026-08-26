@@ -4,4 +4,10 @@
   display: grid;
   grid-template-columns: 220px minmax(0, 1fr);
   gap: 40px;
+
+  .documentation-content {
+    width: 100%;
+    max-width: 900px;
+    min-width: 0;
+  }
 }
