@@ -1,14 +1,9 @@
 @use "../../../../styles/abstracts/colors" as *;
-
-.documentation-header {
-  padding-bottom: 32px;
+.documentation-section {
+  padding: 32px 0;
   border-bottom: 1px solid $border-secondary;
+  scroll-margin-top: 24px;
 
-  .tag {
-    margin-bottom: 12px;
-  }
-
-  .title,
   .desc {
     margin: 0;
   }

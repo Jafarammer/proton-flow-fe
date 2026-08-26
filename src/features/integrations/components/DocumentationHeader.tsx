@@ -16,7 +16,9 @@ const DocumentationHeader = ({
 }: DocumentationHeaderProps) => {
   return (
     <header className="documentation-header">
-      <Tag color={"processing"}>Integration</Tag>
+      <Tag color={"processing"} className="tag">
+        Integration
+      </Tag>
 
       <Title className="title">{title}</Title>
 

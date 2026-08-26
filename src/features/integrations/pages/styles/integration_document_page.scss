@@ -1,3 +1,5 @@
+@use "../../../../styles/abstracts/colors" as *;
+
 .integration-docs-page {
   width: 100%;
   min-width: 0;
@@ -9,5 +11,16 @@
     width: 100%;
     max-width: 900px;
     min-width: 0;
+
+    .documentation-steps {
+      margin: 20px 0;
+      padding-left: 24px;
+      color: $text;
+
+      li {
+        margin-bottom: 10px;
+        line-height: 1.6;
+      }
+    }
   }
 }
