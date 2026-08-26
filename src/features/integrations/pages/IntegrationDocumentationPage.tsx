@@ -31,14 +31,14 @@ const IntegrationDocumentationPage = () => {
         />
 
         <DocumentationSection
-          id="workflow"
-          title="Usage in Workflow"
+          id="authentication"
+          title="Authentication"
           description={
-            providerDocumentation[provider ?? ""].workflow.description
+            providerDocumentation[provider ?? ""].authentication.description
           }
         >
           <ol className="documentation-steps">
-            {providerDocumentation[provider ?? ""].workflow.steps.map(
+            {providerDocumentation[provider ?? ""].authentication.steps.map(
               (step) => (
                 <li key={step}>{step}</li>
               ),
@@ -59,6 +59,22 @@ const IntegrationDocumentationPage = () => {
           <DocumentationModels
             models={providerDocumentation[provider ?? ""].models}
           />
+        </DocumentationSection>
+
+        <DocumentationSection
+          id="workflow"
+          title="Usage in Workflow"
+          description={
+            providerDocumentation[provider ?? ""].workflow.description
+          }
+        >
+          <ol className="documentation-steps">
+            {providerDocumentation[provider ?? ""].workflow.steps.map(
+              (step) => (
+                <li id={step}>{step}</li>
+              ),
+            )}
+          </ol>
         </DocumentationSection>
       </main>
     </div>
