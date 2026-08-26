@@ -2,6 +2,7 @@ import { BsOpenai, BsAnthropic } from "react-icons/bs";
 import { SiGooglegemini } from "react-icons/si";
 import type { Provider } from "./types/component";
 import type { IProviderConfig } from "./types/integrationsConfigure";
+import type { IProviderDocumentation } from "./types/integrationsDocs";
 
 export const providersData: Provider[] = [
   {
@@ -86,5 +87,150 @@ export const providerConfigs: Record<string, IProviderConfig> = {
         value: "gemini-flash",
       },
     ],
+  },
+};
+
+export const providerDocumentation: Record<string, IProviderDocumentation> = {
+  openai: {
+    provider: "openai",
+    title: "OpenAI",
+    description:
+      "Connect OpenAI language models to your Proton Flow workflows.",
+    overview:
+      "The OpenAI integration allows Proton Flow workflows to send prompts to OpenAI models and use the generated response in the next workflow step.",
+    authentication: {
+      description: "Connect your OpenAI account using an API key.",
+      steps: [
+        "Open Integrations.",
+        "Select OpenAI.",
+        "Open Configure.",
+        "Enter your OpenAI API key.",
+        "Select a default model.",
+        "Test the connection.",
+        "Save the configuration.",
+      ],
+    },
+    models: [
+      {
+        name: "GPT-5",
+        description:
+          "General-purpose model for advanced reasoning and text generation.",
+      },
+      {
+        name: "GPT-5 Mini",
+        description: "Faster model suitable for lightweight workflow tasks.",
+      },
+    ],
+    workflow: {
+      description:
+        "Once OpenAI is connected, it can be selected as the AI provider inside an AI workflow node.",
+      steps: [
+        "Create or open a workflow.",
+        "Add an AI node.",
+        "Select OpenAI as the provider.",
+        "Select a model.",
+        "Enter the prompt or instructions.",
+        "Connect the AI node to the next workflow step.",
+      ],
+    },
+    example: {
+      title: "Customer Message Classification",
+      prompt:
+        "Classify the following customer message as sales, support, or general inquiry.",
+    },
+  },
+  anthropic: {
+    provider: "anthropic",
+    title: "Anthropic",
+    description: "Connect Claude models to your Proton Flow workflows.",
+    overview:
+      "The Anthropic integration allows Proton Flow workflows to send instructions and contextual information to Claude and use its response in subsequent workflow steps.",
+    authentication: {
+      description: "Connect Anthropic using your API key.",
+      steps: [
+        "Open Integrations.",
+        "Select Anthropic.",
+        "Open Configure.",
+        "Enter your Anthropic API key.",
+        "Select a default Claude model.",
+        "Test the connection.",
+        "Save the configuration.",
+      ],
+    },
+    models: [
+      {
+        name: "Claude Sonnet",
+        description:
+          "Balanced model for reasoning, text generation, and workflow automation.",
+      },
+      {
+        name: "Claude Haiku",
+        description: "Fast model suitable for lightweight workflow operations.",
+      },
+    ],
+    workflow: {
+      description:
+        "After the integration is connected, Claude can be used inside an AI node.",
+      steps: [
+        "Create or open a workflow.",
+        "Add an AI node.",
+        "Select Anthropic as the provider.",
+        "Select a Claude model.",
+        "Enter the instructions.",
+        "Connect the node to the next workflow step.",
+      ],
+    },
+    example: {
+      title: "Support Response",
+      prompt:
+        "Generate a short and professional response to the following customer support message.",
+    },
+  },
+  gemini: {
+    provider: "gemini",
+    title: "Google Gemini",
+    description: "Connect Gemini models to your Proton Flow workflows.",
+    overview:
+      "The Gemini integration allows Proton Flow workflows to process prompts using Google Gemini models and pass generated results to other workflow nodes.",
+    authentication: {
+      description: "Connect Google Gemini using your API key.",
+      steps: [
+        "Open Integrations.",
+        "Select Google Gemini.",
+        "Open Configure.",
+        "Enter your Gemini API key.",
+        "Select a default model.",
+        "Test the connection.",
+        "Save the configuration.",
+      ],
+    },
+    models: [
+      {
+        name: "Gemini Pro",
+        description: "General-purpose model for reasoning and generation.",
+      },
+      {
+        name: "Gemini Flash",
+        description:
+          "Fast model suitable for high-frequency workflow operations.",
+      },
+    ],
+    workflow: {
+      description:
+        "Once connected, Gemini becomes available as an AI provider in the workflow builder.",
+      steps: [
+        "Create or open a workflow.",
+        "Add an AI node.",
+        "Select Google Gemini.",
+        "Choose a model.",
+        "Enter the prompt.",
+        "Connect the result to another workflow node.",
+      ],
+    },
+    example: {
+      title: "Text Summarization",
+      prompt:
+        "Summarize the following customer message into three short bullet points.",
+    },
   },
 };
