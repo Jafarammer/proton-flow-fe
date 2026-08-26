@@ -13,10 +13,11 @@ const useIntegrations = () => {
   };
   const onConfigure = (provider: Provider) => {
     alert(`Configure ${provider.name}`);
-    navigate(`/integrations/${provider.id}`);
+    navigate(`/integrations/${provider.id}/configure`);
   };
   const onDocumentation = (provider: Provider) => {
     alert(`Open Documentation ${provider.name}`);
+    navigate(`/integrations/${provider.id}/documentation`);
   };
 
   return {

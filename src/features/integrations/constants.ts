@@ -234,3 +234,11 @@ export const providerDocumentation: Record<string, IProviderDocumentation> = {
     },
   },
 };
+
+export const documentationNavigation = [
+  { id: "overview", label: "Overview" },
+  { id: "authentication", label: "Authentication" },
+  { id: "models", label: "Available Models" },
+  { id: "workflow", label: "Usage in Workflow" },
+  { id: "example", label: "Example" },
+];
