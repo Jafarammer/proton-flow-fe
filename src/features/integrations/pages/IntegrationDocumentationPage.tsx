@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import DocumentationSidebar from "../components/DocumentationSidebar";
 import DocumentationHeader from "../components/DocumentationHeader";
 import DocumentationSection from "../components/DocumentationSection";
+import DocumentationModels from "../components/DocumentationModels";
 // constants
 import { providerDocumentation } from "../constants";
 // styles
@@ -43,6 +44,21 @@ const IntegrationDocumentationPage = () => {
               ),
             )}
           </ol>
+          <Alert
+            type="info"
+            showIcon
+            message="Keep your API key private. Never expose provider API keys in client-side workflow data."
+          />
+        </DocumentationSection>
+
+        <DocumentationSection
+          id="models"
+          title="Available Models"
+          description={`Models currently available for ${providerDocumentation[provider ?? ""].title}`}
+        >
+          <DocumentationModels
+            models={providerDocumentation[provider ?? ""].models}
+          />
         </DocumentationSection>
       </main>
     </div>
