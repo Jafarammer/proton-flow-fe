@@ -5,7 +5,7 @@ export interface IDocumentationModel {
 
 export interface IProviderDocumentation {
   provider: string;
-  name: string;
+  title: string;
   description: string;
   overview: string;
   authentication: {
