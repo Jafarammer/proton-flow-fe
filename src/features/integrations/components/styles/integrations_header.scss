@@ -1,6 +1,13 @@
 .integrations-header {
   margin-bottom: 32px;
 
+  .btn {
+    padding-left: 0;
+    &:hover {
+      background: transparent !important;
+    }
+  }
+
   .integrations-header-content {
     margin-top: 16px;
     display: flex;

@@ -27,6 +27,7 @@ function IntegrationsHeader({
         variant="text"
         icon={<IoIosArrowBack />}
         onClick={onBack}
+        className="btn"
       >
         Back
       </Button>

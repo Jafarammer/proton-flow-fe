@@ -2,7 +2,7 @@
 
 .integration-docs-page {
   width: 100%;
-  min-width: 0;
+  min-width: 248px;
   display: grid;
   grid-template-columns: 220px minmax(0, 1fr);
   gap: 40px;
@@ -11,6 +11,14 @@
     width: 100%;
     max-width: 900px;
     min-width: 0;
+
+    .btn {
+      margin-bottom: 24px;
+      padding-left: 0;
+      &:hover {
+        background: transparent !important;
+      }
+    }
 
     .documentation-steps {
       margin: 20px 0;
@@ -22,5 +30,28 @@
         line-height: 1.6;
       }
     }
+
+    .documentation-example {
+      padding: 20px;
+      background: $fill-secondary;
+      border: 1px solid $border;
+      border-radius: 10px;
+
+      .example-title {
+        display: block;
+        margin-bottom: 12px;
+        font-weight: 600;
+      }
+
+      .desc {
+        margin: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .integration-docs-page {
+    display: block;
   }
 }

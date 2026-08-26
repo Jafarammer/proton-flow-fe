@@ -1,6 +1,9 @@
+import { useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 // UI Library
-import { Alert, Typography } from "antd";
-import { useParams } from "react-router-dom";
+import { Alert, Typography, Button } from "antd";
+// icon
+import { IoIosArrowBack } from "react-icons/io";
 // components
 import DocumentationSidebar from "../components/DocumentationSidebar";
 import DocumentationHeader from "../components/DocumentationHeader";
@@ -11,14 +14,33 @@ import { providerDocumentation } from "../constants";
 // styles
 import "./styles/integration_document_page.scss";
 
+const { Paragraph } = Typography;
+
 const IntegrationDocumentationPage = () => {
   // router
   const { provider } = useParams();
+  const navigate = useNavigate();
+  // useState
+  const [activeSection, setActiveSection] = useState<string>("overview");
+
   return (
     <div className="integration-docs-page">
-      <DocumentationSidebar activeSection="overview" />
+      <DocumentationSidebar
+        activeSection={activeSection}
+        onChangeSection={setActiveSection}
+      />
 
       <main className="documentation-content">
+        <Button
+          color="primary"
+          variant="text"
+          icon={<IoIosArrowBack />}
+          onClick={() => navigate("/integrations")}
+          className="btn"
+        >
+          Back
+        </Button>
+
         <DocumentationHeader
           title={providerDocumentation[provider ?? ""].title}
           description={providerDocumentation[provider ?? ""].description}
@@ -75,6 +97,17 @@ const IntegrationDocumentationPage = () => {
               ),
             )}
           </ol>
+        </DocumentationSection>
+
+        <DocumentationSection id="example" title="Example">
+          <div className="documentation-example">
+            <span className="example-title">
+              {providerDocumentation[provider ?? ""].example.title}
+            </span>
+            <Paragraph className="desc">
+              {providerDocumentation[provider ?? ""].example.prompt}
+            </Paragraph>
+          </div>
         </DocumentationSection>
       </main>
     </div>

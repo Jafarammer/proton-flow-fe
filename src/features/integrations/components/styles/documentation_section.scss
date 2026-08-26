@@ -8,3 +8,9 @@
     margin: 0;
   }
 }
+
+@media (max-width: 767px) {
+  .documentation-section {
+    padding: 24px 0;
+  }
+}
