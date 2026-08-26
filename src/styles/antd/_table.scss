@@ -35,18 +35,12 @@
       padding: 20px 32px;
       font-size: 16px;
       color: $text !important;
-      border-bottom: 1px solid #cbd5e1 !important;
+      border-bottom: 1px solid $border !important;
     }
     &:hover {
       > td {
         background: $primary-bg !important;
       }
-    }
-  }
-
-  > tr:last-child {
-    > td {
-      border-bottom: 1px solid $border !important;
     }
   }
 }

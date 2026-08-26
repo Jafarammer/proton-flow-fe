@@ -7,6 +7,7 @@ const useIntegrations = () => {
   // funtion event
   const onConnect = (provider: Provider) => {
     alert(`Connect ${provider.name}`);
+    navigate(`/integrations/${provider.id}/configure`);
   };
   const onDisconnect = (provider: Provider) => {
     alert(`Disconnect ${provider.name}`);
