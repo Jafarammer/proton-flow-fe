@@ -1,0 +1,42 @@
+@use "../../../../styles/abstracts/colors" as *;
+
+.template-preview-header {
+  .template-preview-header {
+    &__back {
+      margin-bottom: 14px;
+      padding-left: 0;
+
+      &:hover {
+        background: transparent !important;
+      }
+    }
+
+    &__content {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    &__info {
+      margin-top: 24px;
+      padding: 20px 24px;
+      background: $background;
+      border: 1px solid $border-secondary;
+      border-radius: 10px;
+
+      .template-category {
+        margin: 12px 0px;
+        color: $primary;
+        background: $primary-bg;
+        border-radius: 5px;
+        font-weight: 500;
+      }
+
+      .label-title,
+      .label-description {
+        margin: 0;
+      }
+    }
+  }
+}
