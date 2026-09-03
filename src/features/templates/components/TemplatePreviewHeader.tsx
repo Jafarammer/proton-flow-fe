@@ -10,11 +10,17 @@ const { Title, Text } = Typography;
 interface TemplatePreviewHeaderProps {
   onBack: () => void;
   onUseTemplate: () => void;
+  title: string;
+  description: string;
+  category: string;
 }
 
 const TemplatePreviewHeader = ({
   onBack,
   onUseTemplate,
+  title,
+  description,
+  category,
 }: TemplatePreviewHeaderProps) => {
   return (
     <div className="template-preview-header">
@@ -30,14 +36,12 @@ const TemplatePreviewHeader = ({
 
       <div className="template-preview-header__content">
         <div className="template-preview-header__info">
-          <Tag className="template-category">Customer Success</Tag>
+          <Tag className="template-category">{category}</Tag>
           <Title level={3} className="label-title">
-            Customer Support Bot
+            {title}
           </Title>
           <Text type="secondary" className="label-description">
-            Automatically triages incoming support tickets, answers FAQs based
-            on your knowledge base, and escalates complex issues to human
-            agents.
+            {description}
           </Text>
         </div>
         <Button
