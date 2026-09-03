@@ -1,7 +1,11 @@
+import { useNavigate } from "react-router-dom";
+
 const useTemplates = () => {
+  // router
+  const navigate = useNavigate();
   // function event
   const onPreview = (templateId: string) => {
-    alert(`Preview ${templateId}`);
+    navigate(`/templates/${templateId}/preview`);
   };
   const onUseTemplate = (templateId: string) => {
     alert(`Use Template ${templateId}`);

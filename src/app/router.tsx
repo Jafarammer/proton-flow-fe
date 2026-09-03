@@ -6,6 +6,7 @@ import Overview from "../features/dashboard/pages/Overview";
 import WorkFlowListPage from "../features/workflows/pages/WorkFlowListPage";
 import CreateWorkflowPage from "../features/workflows/pages/CreateWorkflowPage";
 import TemplateListPage from "../features/templates/pages/TemplateListPage";
+import TemplatePreviewPage from "../features/templates/pages/TemplatePreviewPage";
 import IntegrationListPage from "../features/integrations/pages/IntegrationListPage";
 import IntegrationConfigurePages from "../features/integrations/pages/IntegrationConfigurePages";
 import IntegrationDocumentationPage from "../features/integrations/pages/IntegrationDocumentationPage";
@@ -64,7 +65,16 @@ export const router = createBrowserRouter([
 
       {
         path: "templates",
-        element: <TemplateListPage />,
+        children: [
+          {
+            index: true,
+            element: <TemplateListPage />,
+          },
+          {
+            path: ":templateId/preview",
+            element: <TemplatePreviewPage />,
+          },
+        ],
       },
 
       {
