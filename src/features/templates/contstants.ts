@@ -1,5 +1,8 @@
 import type { Edge } from "@xyflow/react";
-import type { WorkflowNode } from "./types/templatePreview";
+import type {
+  WorkflowNode,
+  ITemplateExplanation,
+} from "./types/templatePreview";
 // icon
 import {
   LuHeadphones,
@@ -195,6 +198,126 @@ export const customerSupportEdges: Edge[] = [
   },
 ];
 
+export const resumeScreenerNodes: WorkflowNode[] = [
+  {
+    id: "resume-uploaded",
+    type: "workflowNode",
+    position: { x: 0, y: 0 },
+    initialWidth: 220,
+    initialHeight: 72,
+    data: {
+      label: "Resume Uploaded",
+      description: "File Upload Trigger",
+      nodeType: "trigger",
+    },
+  },
+  {
+    id: "extract-resume",
+    type: "workflowNode",
+    position: { x: 0, y: 0 },
+    initialWidth: 220,
+    initialHeight: 72,
+    data: {
+      label: "Extract Resume Data",
+      description: "AI Extraction",
+      nodeType: "ai",
+    },
+  },
+  {
+    id: "compare-job",
+    type: "workflowNode",
+    position: { x: 0, y: 0 },
+    initialWidth: 220,
+    initialHeight: 72,
+    data: {
+      label: "Compare Job Criteria",
+      description: "AI Analysis",
+      nodeType: "ai",
+    },
+  },
+  {
+    id: "calculate-score",
+    type: "workflowNode",
+    position: { x: 0, y: 0 },
+    initialWidth: 220,
+    initialHeight: 72,
+    data: {
+      label: "Calculate Match Score",
+      description: "Scoring",
+      nodeType: "action",
+    },
+  },
+  {
+    id: "score-threshold",
+    type: "workflowNode",
+    position: { x: 0, y: 0 },
+    initialWidth: 220,
+    initialHeight: 72,
+    data: {
+      label: "Score Threshold",
+      description: "Condition",
+      nodeType: "condition",
+    },
+  },
+  {
+    id: "qualified",
+    type: "workflowNode",
+    position: { x: 0, y: 0 },
+    initialWidth: 220,
+    initialHeight: 72,
+    data: {
+      label: "Add Candidate",
+      description: "Qualified Candidate",
+      nodeType: "action",
+    },
+  },
+  {
+    id: "not-qualified",
+    type: "workflowNode",
+    position: { x: 0, y: 0 },
+    initialWidth: 220,
+    initialHeight: 72,
+    data: {
+      label: "Send Rejection",
+      description: "Not Qualified",
+      nodeType: "action",
+    },
+  },
+];
+
+export const resumeScreenerEdges: Edge[] = [
+  {
+    id: "resume-extract",
+    source: "resume-uploaded",
+    target: "extract-resume",
+  },
+  {
+    id: "extract-compare",
+    source: "extract-resume",
+    target: "compare-job",
+  },
+  {
+    id: "compare-score",
+    source: "compare-job",
+    target: "calculate-score",
+  },
+  {
+    id: "score-threshold",
+    source: "calculate-score",
+    target: "score-threshold",
+  },
+  {
+    id: "threshold-qualified",
+    source: "score-threshold",
+    target: "qualified",
+  },
+  {
+    id: "threshold-not-qualified",
+    source: "score-threshold",
+    target: "not-qualified",
+  },
+];
+
 export const defaultNodes: WorkflowNode[] = [
   {
     id: "start",
@@ -232,6 +355,67 @@ export const defaultEdges: Edge[] = [
   },
 ];
 
+export const explanationCustomerSupport = [
+  {
+    title: "Ticket Received",
+    content: "A new support ticket enters Proton Flow through a webhook.",
+    status: "process" as const,
+  },
+  {
+    title: "Intent Analysis",
+    content:
+      "The AI analyzes the customer's request and determines whataction should happen next.",
+    status: "process" as const,
+  },
+  {
+    title: "Smart Routing",
+    content:
+      "Proton Flow answers from the knowledge base, requests more information, or escalates the ticket to a human agent.",
+    status: "process" as const,
+  },
+];
+
+export const resumeScreenerExplanation = [
+  {
+    title: "Resume Uploaded",
+    content: "A candidate uploads a resume to start the screening workflow.",
+    status: "process" as const,
+  },
+  {
+    title: "Resume Analysis",
+    content:
+      "The AI extracts key skills and experience, then compares them with the job criteria.",
+    status: "process" as const,
+  },
+  {
+    title: "Candidate Scoring",
+    content:
+      "The candidate receives a match score and is routed based on the screening threshold.",
+    status: "process" as const,
+  },
+];
+
+export const defaultExplanation = [
+  {
+    title: "Start Workflow",
+    content:
+      "The workflow starts when the configured trigger receives new input.",
+    status: "process" as const,
+  },
+  {
+    title: "Process Data",
+    content:
+      "The workflow processes the input through the configured AI models, conditions, and actions.",
+    status: "process" as const,
+  },
+  {
+    title: "Complete Workflow",
+    content:
+      "The workflow completes the process and produces the configured output.",
+    status: "process" as const,
+  },
+];
+
 export const templateConfig: Record<
   string,
   {
@@ -240,6 +424,7 @@ export const templateConfig: Record<
     category: string;
     nodes: WorkflowNode[];
     edges: Edge[];
+    explanations: ITemplateExplanation[];
   }
 > = {
   "customer-support": {
@@ -249,14 +434,16 @@ export const templateConfig: Record<
     category: "Customer Success",
     nodes: customerSupportNodes,
     edges: customerSupportEdges,
+    explanations: explanationCustomerSupport,
   },
   "resume-screener": {
     title: "Resume Screener",
     description:
       "Extracts key skills and experience from uploaded resumes, scoring them against job description criteria to streamline hiring.",
     category: "HR & Ops",
-    nodes: defaultNodes,
-    edges: defaultEdges,
+    nodes: resumeScreenerNodes,
+    edges: resumeScreenerEdges,
+    explanations: resumeScreenerExplanation,
   },
   "research-assistant": {
     title: "Automated Research Assistant",
@@ -265,6 +452,7 @@ export const templateConfig: Record<
     category: "Engineering",
     nodes: defaultNodes,
     edges: defaultEdges,
+    explanations: defaultExplanation,
   },
   "social-media": {
     title: "Social Media Content Generator",
@@ -273,5 +461,6 @@ export const templateConfig: Record<
     category: "Marketing",
     nodes: defaultNodes,
     edges: defaultEdges,
+    explanations: defaultExplanation,
   },
 };

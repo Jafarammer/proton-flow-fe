@@ -15,3 +15,9 @@ export interface IWorkflowNodeData extends Record<string, unknown> {
 }
 
 export type WorkflowNode = Node<IWorkflowNodeData, "workflowNode">;
+
+export interface ITemplateExplanation {
+  title: string;
+  content: string;
+  status: "process";
+}
