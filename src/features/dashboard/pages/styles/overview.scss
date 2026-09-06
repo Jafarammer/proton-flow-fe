@@ -2,28 +2,26 @@
   width: 100%;
   min-width: 248px;
 
-  .overview-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  &__stat {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
     margin-top: 32px;
-    text-align: center;
+  }
+}
 
-    .img {
-      width: 320px;
-      height: 320px;
+@media (max-width: 1024px) {
+  .overview-page {
+    &__stat {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
 }
 
-@media (max-width: 567px) {
+@media (max-width: 768px) {
   .overview-page {
-    .overview-content {
-      .img {
-        width: 220px !important;
-        height: 220px !important;
-      }
+    &__stat {
+      grid-template-columns: 1fr;
     }
   }
 }
