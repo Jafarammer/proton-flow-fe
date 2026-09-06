@@ -15,5 +15,9 @@
     background: $background;
     border-bottom-color: $border-secondary;
     color: $primary;
+
+    &:hover {
+      background: transparent !important;
+    }
   }
 }

@@ -3,24 +3,21 @@ import {
   BackgroundVariant,
   Controls,
   ReactFlow,
+  useNodesState,
 } from "@xyflow/react";
 import WorkflowNode from "./WorkflowNode";
 // type
 import type { WorkflowNode as WorkflowNodeType } from "../types/templatePreview";
 import type { Edge, ProOptions } from "@xyflow/react";
-// contstants
-import {
-  customerSupportEdges,
-  customerSupportNodes,
-  defaultEdges,
-  defaultNodes,
-} from "../contstants";
+// components layout
+import LayoutHandler from "../../../layouts/flowLayout/LayoutHandler";
 // styles
 import "./styles/template_workflow_preview.scss";
 import "@xyflow/react/dist/style.css";
 
 interface TemplateWorkflowPreviewProps {
-  templateId: string;
+  nodes: WorkflowNodeType[];
+  edges: Edge[];
 }
 
 const proOptions: ProOptions = { account: "paid-pro", hideAttribution: true };
@@ -30,46 +27,30 @@ const nodeTypes = {
 };
 
 const TemplateWorkflowPreview = ({
-  templateId,
+  nodes,
+  edges,
 }: TemplateWorkflowPreviewProps) => {
-  let nodes: WorkflowNodeType[] = defaultNodes;
-  let edges: Edge[] = defaultEdges;
-
-  switch (templateId) {
-    case "customer-support":
-      nodes = customerSupportNodes;
-      edges = customerSupportEdges;
-      break;
-    default:
-      nodes = defaultNodes;
-      edges = defaultEdges;
-      break;
-  }
+  const [flowNodes, setFlowNodes, onNodesChange] =
+    useNodesState<WorkflowNodeType>(nodes);
 
   return (
     <div className="template-workflow-preview">
       <ReactFlow
-        nodes={nodes}
+        nodes={flowNodes}
         edges={edges}
+        onNodesChange={onNodesChange}
         nodeTypes={nodeTypes}
         nodesDraggable={false}
         nodesConnectable={false}
         elementsSelectable={false}
         nodesFocusable={false}
+        edgesFocusable={false}
         panOnDrag
         zoomOnScroll
         proOptions={proOptions}
-        fitView
-        fitViewOptions={{
-          padding: 0.2,
-        }}
-        defaultEdgeOptions={{
-          style: {
-            stroke: "var(--ant-color-border)",
-            strokeWidth: 1.5,
-          },
-        }}
       >
+        <LayoutHandler setFlowNodes={setFlowNodes} />
+
         <Background variant={BackgroundVariant.Dots} gap={20} size={1} />
 
         <Controls showInteractive={false} position="bottom-right" />

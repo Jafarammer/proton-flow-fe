@@ -44,44 +44,16 @@ export const templatesCardData: ICardTemplate[] = [
   },
 ];
 
-export const templateConfig: Record<
-  string,
-  { title: string; description: string; category: string }
-> = {
-  "customer-support": {
-    title: "Customer Support Bot",
-    description:
-      "Automatically triages incoming support tickets, answers FAQs based on knowledge base, and escalates complex issues to human agents.",
-    category: "Customer Success",
-  },
-  "resume-screener": {
-    title: "Resume Screener",
-    description:
-      "Extracts key skills and experience from uploaded resumes, scoring them against job description criteria to streamline hiring.",
-    category: "HR & Ops",
-  },
-  "research-assistant": {
-    title: "Automated Research Assistant",
-    description:
-      "Scrapes technical documentation and recent academic papers to summarize findings and generate literature reviews on specified topics.",
-    category: "Engineering",
-  },
-  "social-media": {
-    title: "Social Media Content Generator",
-    description:
-      "Takes blog post URLs and automatically generates platform-specific social media copy, hashtags, and suggested image prompts.",
-    category: "Marketing",
-  },
-};
-
 export const customerSupportNodes: WorkflowNode[] = [
   {
     id: "trigger",
     type: "workflowNode",
     position: {
       x: 0,
-      y: 180,
+      y: 0,
     },
+    initialWidth: 220,
+    initialHeight: 72,
     data: {
       label: "New Support Ticket",
       description: "Webhook Trigger",
@@ -92,9 +64,11 @@ export const customerSupportNodes: WorkflowNode[] = [
     id: "analyze-intent",
     type: "workflowNode",
     position: {
-      x: 260,
-      y: 180,
+      x: 0,
+      y: 0,
     },
+    initialWidth: 220,
+    initialHeight: 72,
     data: {
       label: "Analyze Intent",
       description: "AI Model",
@@ -105,9 +79,11 @@ export const customerSupportNodes: WorkflowNode[] = [
     id: "route-intent",
     type: "workflowNode",
     position: {
-      x: 520,
-      y: 180,
+      x: 0,
+      y: 0,
     },
+    initialWidth: 220,
+    initialHeight: 72,
     data: {
       label: "Route by Intent",
       description: "Condition",
@@ -118,9 +94,11 @@ export const customerSupportNodes: WorkflowNode[] = [
     id: "knowledge-base",
     type: "workflowNode",
     position: {
-      x: 800,
-      y: 20,
+      x: 0,
+      y: 0,
     },
+    initialWidth: 220,
+    initialHeight: 72,
     data: {
       label: "Search Knowledge Base",
       description: "Knowledge",
@@ -131,9 +109,11 @@ export const customerSupportNodes: WorkflowNode[] = [
     id: "collect-info",
     type: "workflowNode",
     position: {
-      x: 800,
-      y: 180,
+      x: 0,
+      y: 0,
     },
+    initialWidth: 220,
+    initialHeight: 72,
     data: {
       label: "Ask for Details",
       description: "Action",
@@ -144,9 +124,11 @@ export const customerSupportNodes: WorkflowNode[] = [
     id: "human-agent",
     type: "workflowNode",
     position: {
-      x: 800,
-      y: 340,
+      x: 0,
+      y: 0,
     },
+    initialWidth: 220,
+    initialHeight: 72,
     data: {
       label: "Escalate to Human",
       description: "Human Agent",
@@ -157,9 +139,11 @@ export const customerSupportNodes: WorkflowNode[] = [
     id: "send-response",
     type: "workflowNode",
     position: {
-      x: 1080,
-      y: 180,
+      x: 0,
+      y: 0,
     },
+    initialWidth: 220,
+    initialHeight: 72,
     data: {
       label: "Send Response",
       description: "Customer Reply",
@@ -217,7 +201,7 @@ export const defaultNodes: WorkflowNode[] = [
     type: "workflowNode",
     position: {
       x: 0,
-      y: 100,
+      y: 0,
     },
     data: {
       label: "Start",
@@ -229,7 +213,7 @@ export const defaultNodes: WorkflowNode[] = [
     id: "action",
     type: "workflowNode",
     position: {
-      x: 280,
+      x: 0,
       y: 100,
     },
     data: {
@@ -247,3 +231,47 @@ export const defaultEdges: Edge[] = [
     target: "action",
   },
 ];
+
+export const templateConfig: Record<
+  string,
+  {
+    title: string;
+    description: string;
+    category: string;
+    nodes: WorkflowNode[];
+    edges: Edge[];
+  }
+> = {
+  "customer-support": {
+    title: "Customer Support Bot",
+    description:
+      "Automatically triages incoming support tickets, answers FAQs based on knowledge base, and escalates complex issues to human agents.",
+    category: "Customer Success",
+    nodes: customerSupportNodes,
+    edges: customerSupportEdges,
+  },
+  "resume-screener": {
+    title: "Resume Screener",
+    description:
+      "Extracts key skills and experience from uploaded resumes, scoring them against job description criteria to streamline hiring.",
+    category: "HR & Ops",
+    nodes: defaultNodes,
+    edges: defaultEdges,
+  },
+  "research-assistant": {
+    title: "Automated Research Assistant",
+    description:
+      "Scrapes technical documentation and recent academic papers to summarize findings and generate literature reviews on specified topics.",
+    category: "Engineering",
+    nodes: defaultNodes,
+    edges: defaultEdges,
+  },
+  "social-media": {
+    title: "Social Media Content Generator",
+    description:
+      "Takes blog post URLs and automatically generates platform-specific social media copy, hashtags, and suggested image prompts.",
+    category: "Marketing",
+    nodes: defaultNodes,
+    edges: defaultEdges,
+  },
+};
