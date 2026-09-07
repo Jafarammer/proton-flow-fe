@@ -2,10 +2,11 @@
 // import { Typography } from "antd";
 // component
 import OverviewStatCard from "../components/OverviewStatCard";
+import WorkflowActivityChart from "../components/WorkflowActivityChart";
 // layout
 import PageLayout from "../../../layouts/appLayout/PageLayout";
 // constants
-import { overviewStats } from "../constants";
+import { overviewStats, workflowActivityData } from "../constants";
 // styles
 import "./styles/overview.scss";
 
@@ -22,6 +23,10 @@ const Overview = () => {
         {overviewStats.map((stat) => (
           <OverviewStatCard key={stat.key} data={stat} />
         ))}
+      </div>
+
+      <div className="overview-page__charts">
+        <WorkflowActivityChart data={workflowActivityData} />
       </div>
     </PageLayout>
   );

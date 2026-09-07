@@ -1,0 +1,75 @@
+@use "../../../../styles/abstracts/colors" as *;
+
+.workflow-activity-chart {
+  min-width: 0;
+  padding: 20px;
+  background: $background;
+  border: 1px solid $border-secondary;
+  border-radius: 10px;
+
+  .recharts-wrapper,
+  .recharts-surface {
+    outline: none;
+  }
+
+  .recharts-wrapper:focus,
+  .recharts-wrapper:focus-visible,
+  .recharts-surface:focus,
+  .recharts-surface:focus-visible {
+    outline: none;
+  }
+
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 24px;
+
+    h3 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 600;
+      color: $text;
+    }
+
+    p {
+      margin: 4px 0 0;
+      font-size: 12px;
+      color: $text-tertiary;
+    }
+  }
+
+  &__legend {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    > div {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 12px;
+      color: $text-secondary;
+    }
+  }
+
+  &__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+
+    &--total {
+      background: #76c457;
+    }
+    &--active {
+      background: #ffcb56;
+    }
+  }
+
+  &__content {
+    width: 100%;
+    height: 320px;
+    min-width: 0;
+  }
+}

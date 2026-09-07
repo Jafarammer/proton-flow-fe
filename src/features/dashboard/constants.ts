@@ -1,7 +1,7 @@
 import type {
   IOverviewStat,
+  IWorkflowActivity,
   // IRecentWorkflow,
-  // IWorkflowActivity,
   // IWorkflowStatusData,
   // WorkflowStatus,
 } from "./types/overview";
@@ -30,5 +30,38 @@ export const overviewStats: IOverviewStat[] = [
     title: "Integrations",
     value: 3,
     description: "2 connected",
+  },
+];
+
+export const workflowActivityData: IWorkflowActivity[] = [
+  {
+    month: "Apr",
+    total: 2,
+    active: 1,
+  },
+  {
+    month: "May",
+    total: 4,
+    active: 3,
+  },
+  {
+    month: "Jun",
+    total: 5,
+    active: 4,
+  },
+  {
+    month: "Jul",
+    total: 7,
+    active: 5,
+  },
+  {
+    month: "Aug",
+    total: 9,
+    active: 7,
+  },
+  {
+    month: "Sep",
+    total: 12,
+    active: 8,
   },
 ];
