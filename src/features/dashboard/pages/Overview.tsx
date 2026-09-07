@@ -3,6 +3,7 @@
 // component
 import OverviewStatCard from "../components/OverviewStatCard";
 import WorkflowActivityChart from "../components/WorkflowActivityChart";
+import WorkflowStatusChart from "../components/WorkflowStatusChart";
 // layout
 import PageLayout from "../../../layouts/appLayout/PageLayout";
 // constants
@@ -27,6 +28,7 @@ const Overview = () => {
 
       <div className="overview-page__charts">
         <WorkflowActivityChart data={workflowActivityData} />
+        <WorkflowStatusChart />
       </div>
     </PageLayout>
   );
