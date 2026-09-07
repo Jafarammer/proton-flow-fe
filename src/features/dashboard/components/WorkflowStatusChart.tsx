@@ -1,13 +1,15 @@
 import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip } from "recharts";
 // type
-import type { WorkflowStatus } from "../types/overview";
-// constants
-import { workflowStatusData } from "../constants";
+import type { WorkflowStatus, IWorkflowStatusData } from "../types/overview";
 // styles
 import "./styles/workflow_status_chart.scss";
 
-const WorkflowStatusChart = () => {
-  const total = workflowStatusData.reduce((sum, item) => sum + item.value, 0);
+interface WorkflowStatusChartProps {
+  data: IWorkflowStatusData[];
+}
+
+const WorkflowStatusChart = ({ data }: WorkflowStatusChartProps) => {
+  const total = data.reduce((sum, item) => sum + item.value, 0);
   const getStatusColor = (status: WorkflowStatus): string => {
     switch (status) {
       case "active":
@@ -20,6 +22,7 @@ const WorkflowStatusChart = () => {
         return "var(--ant-color-primary)";
     }
   };
+
   return (
     <div className="workflow-status-chart">
       <div className="workflow-status-chart__header">
@@ -34,7 +37,7 @@ const WorkflowStatusChart = () => {
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>
               <Pie
-                data={workflowStatusData}
+                data={data}
                 dataKey="value"
                 nameKey="name"
                 cx="50%"
@@ -42,7 +45,7 @@ const WorkflowStatusChart = () => {
                 innerRadius={50}
                 paddingAngle={3}
               >
-                {workflowStatusData.map((item) => (
+                {data.map((item) => (
                   <Cell key={item.name} fill={getStatusColor(item.status)} />
                 ))}
               </Pie>
@@ -64,7 +67,7 @@ const WorkflowStatusChart = () => {
         </div>
 
         <div className="workflow-status-chart__legend">
-          {workflowStatusData.map((item) => (
+          {data.map((item) => (
             <div key={item.name} className="workflow-status-chart__legend-item">
               <div>
                 <span

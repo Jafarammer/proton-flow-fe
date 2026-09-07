@@ -2,8 +2,7 @@ import type {
   IOverviewStat,
   IWorkflowActivity,
   IWorkflowStatusData,
-  // IRecentWorkflow,
-  // WorkflowStatus,
+  IRecentWorkflow,
 } from "./types/overview";
 
 export const overviewStats: IOverviewStat[] = [
@@ -81,5 +80,32 @@ export const workflowStatusData: IWorkflowStatusData[] = [
     name: "Inactive",
     value: 1,
     status: "inactive",
+  },
+];
+
+export const recentWorkflows: IRecentWorkflow[] = [
+  {
+    id: "wf-001",
+    name: "Customer Support Bot",
+    status: "active",
+    updatedAt: "2 min ago",
+  },
+  {
+    id: "wf-002",
+    name: "Resume Screener",
+    status: "draft",
+    updatedAt: "15 min ago",
+  },
+  {
+    id: "wf-003",
+    name: "Research Assistant",
+    status: "active",
+    updatedAt: "1 hour ago",
+  },
+  {
+    id: "wf-004",
+    name: "Social Media Generator",
+    status: "inactive",
+    updatedAt: "3 hours ago",
   },
 ];

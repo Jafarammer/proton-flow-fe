@@ -4,10 +4,16 @@
 import OverviewStatCard from "../components/OverviewStatCard";
 import WorkflowActivityChart from "../components/WorkflowActivityChart";
 import WorkflowStatusChart from "../components/WorkflowStatusChart";
+import RecentWorkflows from "../components/RecentWorkflows";
 // layout
 import PageLayout from "../../../layouts/appLayout/PageLayout";
 // constants
-import { overviewStats, workflowActivityData } from "../constants";
+import {
+  overviewStats,
+  workflowActivityData,
+  workflowStatusData,
+  recentWorkflows,
+} from "../constants";
 // styles
 import "./styles/overview.scss";
 
@@ -28,7 +34,11 @@ const Overview = () => {
 
       <div className="overview-page__charts">
         <WorkflowActivityChart data={workflowActivityData} />
-        <WorkflowStatusChart />
+        <WorkflowStatusChart data={workflowStatusData} />
+      </div>
+
+      <div className="overview-page__recent">
+        <RecentWorkflows data={recentWorkflows} />
       </div>
     </PageLayout>
   );
