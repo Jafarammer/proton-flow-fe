@@ -1,6 +1,6 @@
 import dayjs, { type Dayjs } from "dayjs";
 // UI Library
-import { Typography, DatePicker } from "antd";
+import { DatePicker } from "antd";
 // component
 import OverviewStatCard from "../components/OverviewStatCard";
 import WorkflowActivityChart from "../components/WorkflowActivityChart";
@@ -17,8 +17,6 @@ import {
 } from "../constants";
 // styles
 import "./styles/overview.scss";
-
-// const { Title, Text } = Typography;
 
 const { RangePicker } = DatePicker;
 
