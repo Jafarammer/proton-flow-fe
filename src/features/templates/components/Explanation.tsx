@@ -17,7 +17,7 @@ const Explanation = ({ step }: ExplanationProps) => {
       <Title level={5}>How it works ?</Title>
       <Steps
         className="step"
-        orientation="vertical"
+        orientation="horizontal"
         current={step.length}
         items={step}
       />

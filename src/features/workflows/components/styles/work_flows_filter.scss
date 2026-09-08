@@ -29,7 +29,7 @@
     margin-left: auto;
 
     .input-search {
-      width: 320px;
+      width: 280px;
     }
   }
 
@@ -48,5 +48,15 @@
 
   .ant-space {
     min-width: max-content;
+  }
+}
+
+@media (max-width: 1199px) {
+  .workflows-filters {
+    .workflows-filters-right {
+      .input-search {
+        width: 220px;
+      }
+    }
   }
 }

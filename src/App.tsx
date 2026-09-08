@@ -3,7 +3,7 @@ import { router } from "./app/router";
 
 const App = () => {
   return (
-    <div className="proton-flow app-root">
+    <div className="app-root proton-flow ">
       <RouterProvider router={router} />
     </div>
   );

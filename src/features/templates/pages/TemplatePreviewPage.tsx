@@ -30,14 +30,14 @@ const TemplatePreviewPage = () => {
       />
 
       <div className="template-preview-page__content">
-        <div className="template-preview-page__step">
-          <Explanation step={templateConfig[templateId ?? ""]?.explanations} />
-        </div>
         <div className="template-preview-page__canvas">
           <TemplateWorkflowPreview
             nodes={templateConfig[templateId ?? ""].nodes}
             edges={templateConfig[templateId ?? ""].edges}
           />
+        </div>
+        <div className="template-preview-page__step">
+          <Explanation step={templateConfig[templateId ?? ""]?.explanations} />
         </div>
       </div>
     </div>

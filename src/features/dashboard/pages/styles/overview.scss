@@ -2,6 +2,13 @@
   width: 100%;
   min-width: 248px;
 
+  &__range-filter {
+    margin-top: 24px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
   &__stat {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
